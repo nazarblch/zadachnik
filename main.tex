@@ -1,0 +1,121 @@
+\documentclass[10pt]{article}
+\usepackage[intlimits]{amsmath}
+\usepackage{amsthm,amsfonts}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+\usepackage[dvips]{graphicx}
+\usepackage{longtable}
+\usepackage{indentfirst}
+\usepackage[utf8]{inputenc}
+\usepackage[T2A]{fontenc}
+\usepackage[russian,english]{babel}
+
+\pdfpagewidth 14cm
+\pdfpageheight 20cm
+
+\textwidth 11cm
+\textheight 16.5cm
+\oddsidemargin 1.5cm % 1.84cm
+\topmargin 1.5cm % 1.8cm
+\footskip 1cm
+
+\hoffset -1in
+\voffset -1in
+\headheight 0pt
+\headsep 0pt
+
+% Adjust first page number according to real document position in the book.
+\setcounter{page}{1}
+
+% Dot after section number
+\makeatletter
+% In section title
+\def\@seccntformat#1{\csname the#1\endcsname.\quad}
+\makeatother
+
+%\tolerance = 2000
+
+% To place author above title
+\def\maketitle{
+  \begin{center}
+Title
+  \end{center}
+}
+
+\renewcommand{\refname}{Литература}
+
+\date{}
+
+%\sloppy
+%\DeclareGraphicsRule{*}{eps}{*}{}
+\DeclareMathOperator{\diam}{diam}
+
+\graphicspath{{images/}}
+\newcommand{\imgh}[3]{\begin{figure}[!h]\center{\includegraphics[width=#1]{#2}}\caption{#3}\label{Fig:#2}\end{figure}}
+
+% Perfectly typesetted tilde for url links.
+\def\urltilde{\kern -.15em\lower .7ex\hbox{\~{}}\kern .04em}
+
+\addto{\captionsrussian}{
+	\renewcommand{\proofname}{\bf Решение. }
+}
+
+
+
+\theoremstyle{definition}
+%\newtheorem{problem}{\noindent\normalsize\bfЗадача \No\!\!}
+\newtheorem{problem}{\noindent\normalsize\bf{}}
+\newtheorem{example}{\noindent\normalsize\bf{}Пример}
+\newtheorem*{definition}{\noindent\normalsize\bf{}Определение}
+\newtheorem*{remark}{\noindent\normalsize\bf{}Замечание}
+\newtheorem{theorem}{\noindent\normalsize\bf{}Теорема}
+
+\newenvironment{solution}{\begin{proof}\vspace{1em}} {\end{proof} \vspace{2em}}
+
+
+\newcommand{\rg}{\ensuremath{\mathrm{rg}}}
+\newcommand{\grad}{\ensuremath{\mathrm{grad}}}
+\newcommand{\diag}{\ensuremath{\mathrm{diag}}}
+\newcommand{\const}{\ensuremath{\mathop{\mathrm{const}}}\nolimits}
+\newcommand{\Var}{\ensuremath{\mathop{\mathrm{Var}}}\nolimits}
+\newcommand{\Exp}{\ensuremath{\mathrm{Exp}}}
+\newcommand{\Be}{\ensuremath{\mathrm{Be}}}
+\newcommand{\Po}{\ensuremath{\mathrm{Po}}}
+\newcommand{\Bi}{\ensuremath{\mathrm{Bi}}}
+\newcommand{\Ker}{\ensuremath{\mathrm{Ker}}}
+\newcommand{\Real}{\ensuremath{\mathrm{Re}}}
+\newcommand{\Lin}{\ensuremath{\mathrm{Lin}}}
+\newcommand{\Gl}{\ensuremath{\mathrm{Gl}}}
+\newcommand{\mes}{\ensuremath{\mathrm{mes}}}
+\newcommand{\cov}{\ensuremath{\mathrm{cov}}}
+
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\include{standart_tasks}
+
+\include{zb4}
+
+\include{combinatorics}
+
+\include{generative_functions}
+
+\include{monte_carlo}
+
+\include{algorithms}
+
+\include{measure_concentration}
+
+\include{geometric_probability}
+
+\include{information}
+
+\include{sundries} % разное
+
+\include{bibliography}
+
+\end{document}

@@ -1,0 +1,9 @@
+*.pyc
+*~
+*.sqlite
+*.log
+*.aux
+*.out
+*.gz
+*.toc
+*.pdf

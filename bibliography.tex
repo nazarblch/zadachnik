@@ -1,0 +1,21 @@
+\newpage
+
+% Требование РИО "Литература" вместо "Список литературы"
+\renewcommand\refname{Литература}
+% В самом списке 1. вместо [1]
+\makeatletter
+\renewcommand{\@biblabel}[1]{#1.}
+\makeatother
+
+\begin{thebibliography} {20}
+
+\bibitem{ER1} 
+{\it Erd\H{o}s P., R\'enyi A.}
+On random graphs I
+// Publ. Math. Debrecen. 1959. V.~6. P.~290--297.
+
+
+
+\end{thebibliography}
+
+
