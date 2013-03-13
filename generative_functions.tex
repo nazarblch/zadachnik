@@ -1,1 +1,47 @@
 \section{Производящие функции}
+
+\begin{problem}
+Доказать неравенство Чернова:
+
+\[P\left\{\sum _{i=1}^{n}X_{i} >(p+t)n \right\}\le \exp \left\{nH\left(\left\{p+t,q-t\right\},\left\{p,q\right\}\right)\right\},\quad 0\le t\le q,\] 
+где $X_{i} $, $i=1,...,n$ - независимые случайные величины, имеющие распределение Бернулли:
+\[X_{i} =\left\{\begin{array}{cc} {1,} & {p,} \\ {0,} & {q=1-p;} \end{array}\right. \] 
+$H\left(P,Q\right)=\sum _{j=1}^{m}-P_{j} \log \frac{P_{j} }{Q_{j} }  $ - относительное энтропийное «расстояние» между двумя (дискретными) распределениями вероятностей $P=\left(P_{1} ,\ldots ,P_{m} \right)$ и $Q=\left(Q_{1} ,\ldots ,Q_{m} \right)$ на пространстве элементарных исходов размера $m$.
+
+\begin{ordre}
+ 
+Воспользуйтесь техникой получения неравенства Азумы, рассказанной на лекции, а именно 
+
+\noindent \textbf{а)} перейдите к положительной случайной величине $e^{\lambda \sum _{i=1}^{n}X_{i}  } $($\lambda >0$ - некий параметр). В теории вероятностей функция $\varphi _{Y} (\lambda )=E\left[e^{\lambda Y} \right]$называется производящей функции моментов случайной величины $Y$, так как при разложении в ряд Тейлора $\varphi _{Y} (\lambda )=E\left[e^{\lambda Y} \right]=E\left[\sum _{i=0}^{\infty }\frac{\lambda ^{i} }{i!} Y^{i}  \right]=\sum _{i=0}^{\infty }\frac{\lambda ^{i} }{i!} E\left[Y^{i} \right] $, где $E\left[Y^{i} \right]$ - \textit{i}-ый момент случайной величины $Y$.
+
+\noindent \textbf{б)} применив неравенство Маркова , получите $P\left\{\sum _{i=1}^{n}X_{i} > \; m\right\}=P\left\{e^{\lambda \sum _{i=1}^{n}X_{i}  } >e^{m} \right\}\le \left(\frac{pe^{\lambda } +q}{e^{\lambda (p+t)} } \right)^{n} $ с параметризацией $m=(p+t)n$.
+
+\noindent \textbf{в)} подобрав оптимальное значение ($\frac{pe^{\lambda } +q}{e^{\lambda (p+t)} } \to \mathop{\min }\limits_{\lambda } $), получите 
+
+\[
+P\left\{\sum _{i=1}^{n}X_{i} >(p+t)n \right\}\le \left(\left(\frac{p}{p+t} \right)^{p+t} \left(\frac{q}{q-t} \right)^{q-t} \right)^{n} 
+\]
+\[
+= \exp \left\{n\left[-(p+t)\ln \frac{p+t}{p} -(q-t)\ln \frac{q-t}{q} \right]\right\}.
+\] 
+
+
+\end{ordre}
+
+\begin{remark}
+C точки зрения математической статистики 
+
+\[
+H\left(\left\{p+t,q-t\right\},\left\{p,q\right\}\right)=-(p+t)\ln \frac{p+t}{p} -(q-t)\ln \frac{q-t}{q} 
+\]
+
+-энтропийное расстояние между апостериорным (полученным после эксперимента) распределением $\left\{p+t,q-t\right\}$и априорным $\left\{p,q\right\}$. Таким образом, «граница» Чернова уменьшается экспоненциально с показателем равным n-кратному энтропийному расстоянию между апостериорным и априорным распределением вероятностей.\textbf{}
+
+\noindent Более удобная запись «границы» Чернова:
+\[P\left\{\sum _{i=1}^{n}X_{i} >(p+t)n \right\}\le \exp \left\{-\frac{2t^{2} }{n} \right\},\] 
+так как для функции $f(t)=(p+t)\ln \frac{p+t}{p} +(q-t)\ln \frac{q-t}{q} $ имеем $f(0)=f'(0)=0$, $f''(t)=\frac{1}{(p+t)(q-t)} \ge 4$ для любого $0\le t\le q$, значит разложение Тейлора 
+\[f(t)=f(0)+f'(0)t+f''(\xi )\frac{t^{2} }{2!} \ge 2t^{2} ,\quad 0<\xi <t.\]
+
+\end{remark}
+
+\end{problem}

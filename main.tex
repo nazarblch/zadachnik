@@ -1,4 +1,5 @@
-\documentclass[10pt]{article}
+\documentclass[russian,koi8-r,10pt]{article}
+
 \usepackage[intlimits]{amsmath}
 \usepackage{amsthm,amsfonts}
 \usepackage{amssymb}
@@ -9,6 +10,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T2A]{fontenc}
 \usepackage[russian,english]{babel}
+
 
 \pdfpagewidth 14cm
 \pdfpageheight 20cm
@@ -23,6 +25,9 @@
 \voffset -1in
 \headheight 0pt
 \headsep 0pt
+
+\hyphenpenalty=200
+\tolerance=800
 
 % Adjust first page number according to real document position in the book.
 \setcounter{page}{1}
@@ -60,15 +65,21 @@ Title
 	\renewcommand{\proofname}{\bf Решение. }
 }
 
-
+\usepackage{wasysym}
 
 \theoremstyle{definition}
 %\newtheorem{problem}{\noindent\normalsize\bfЗадача \No\!\!}
-\newtheorem{problem}{\noindent\normalsize\bf{}}
+\newtheorem{problem}{\noindent\normalsize\bf{}}[section]
+\renewcommand{\theproblem}{\arabic{problem}}
 \newtheorem{example}{\noindent\normalsize\bf{}Пример}
 \newtheorem*{definition}{\noindent\normalsize\bf{}Определение}
 \newtheorem*{remark}{\noindent\normalsize\bf{}Замечание}
 \newtheorem{theorem}{\noindent\normalsize\bf{}Теорема}
+\newtheorem{fixme}{\noindent\normalsize\bf{}\frownie{} fixme}
+\renewcommand{\thefixme}{}
+
+\newtheorem{ordre}{\noindent\normalsize\textit{Указание}}
+\renewcommand{\theordre}{}
 
 \newenvironment{solution}{\begin{proof}\vspace{1em}} {\end{proof} \vspace{2em}}
 
@@ -91,6 +102,8 @@ Title
 
 
 \begin{document}
+
+\selectlanguage{russian}
 
 \maketitle
 
