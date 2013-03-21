@@ -1,6 +1,15 @@
 \section{Сходимость и закон больших чисел}
 
 \begin{problem}
+Пусть при любом $\lambda >0$ с.в. $\xi _{\lambda } $ имеет распределение Пуассона. Докажите, что $\frac{\xi _{\lambda } -\lambda }{\sqrt{\lambda } } $ слабо сходится к стандартному нормальному распределению при $\lambda \to \infty $.
+
+\begin{ordre}
+ Используйте аппарат характеристических функций и теорему о непрерывном соответствии (о том, что слабая сходимость эквивалентна сходимости соответствующих характеристических функций).
+ \end{ordre}
+\end{problem}
+
+
+\begin{problem}
 Пусть случайный вектор $X^{n} $ имеет равномерное распределение на единичной сфере в ${\mathbb R}^{n} $. Пусть $Y^{n} $ -- проекция $X^{n} $ на первую координатную ось. Докажите, что последовательность $\sqrt{n} Y^{n} $ сходится по распределению к стандартной нормальной случайной величине.
 
 \begin{ordre} 
@@ -38,9 +47,12 @@ Bывод распределения Хольцмарка: Рассмотрим 
 
 \noindent \textbf{а)} Объясните, почему нет слабой сходимости такой последовательности с.в.:
 \[\xi _{n} =\left\{\begin{array}{cc} {-n,} & {{\raise0.7ex\hbox{$ 1 $}\!\mathord{\left/ {\vphantom {1 2}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ 2 $}} ,} \\ {n,} & {{\raise0.7ex\hbox{$ 1 $}\!\mathord{\left/ {\vphantom {1 2}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ 2 $}} ;} \end{array}\right. \] 
-\textbf{Указание: }
+
+\begin{ordre} 
 
 \noindent $F_{\xi _{n} } (x)=\left\{\begin{array}{cc} {0,} & {x\le -n} \\ {{\raise0.7ex\hbox{$ 1 $}\!\mathord{\left/ {\vphantom {1 2}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ 2 $}} ,} & {-n<x\le n} \\ {1,} & {x>n} \end{array}\right. $ сходятся к функции $G(x)\equiv \frac{1}{2} $.
+
+\end{ordre} 
 
 \noindent \textbf{б)} Пусть $\xi _{1} ,\xi _{2} ,\xi _{3} ,...$ - последовательность независимых одинаково распределенных с.в. с конечной ненулевой дисперсией. Обозначим $S_{n} =\sum _{i=1}^{n}\xi _{i}  $. При каких значениях $c$ имеет или не имеет место сходимость $P\left(\frac{S_{n} }{n} <c\right)\to P\left(E\xi _{1} <c\right)$?
 
@@ -48,7 +60,10 @@ Bывод распределения Хольцмарка: Рассмотрим 
 \[\mathop{\lim }\limits_{n\to \infty } \int _{0}^{0.999999n}\frac{1}{(n-1)!} y^{n-1} e^{-y} dy =0,\] 
 \[\mathop{\lim }\limits_{n\to \infty } \int _{0}^{n}\frac{1}{(n-1)!} y^{n-1} e^{-y} dy =\frac{1}{2} ,\] 
 \[\mathop{\lim }\limits_{n\to \infty } \int _{0}^{1.0000001n}\frac{1}{(n-1)!} y^{n-1} e^{-y} dy =1.\] 
-\textbf{Указание:} Каждый из интегралов есть распределение суммы независимых с.в. с некоторым показательным распределением. Учитывайте, что показательное распределение есть частный случай гамма распределения, которое устойчиво относительно суммирования.
+
+\begin{ordre} 
+
+Каждый из интегралов есть распределение суммы независимых с.в. с некоторым показательным распределением. Учитывайте, что показательное распределение есть частный случай гамма распределения, которое устойчиво относительно суммирования.
 
 \noindent Напомним, что 
 
@@ -56,4 +71,117 @@ Bывод распределения Хольцмарка: Рассмотрим 
 \[f_{\xi } (x)=\left\{\begin{array}{cc} {0,} & {x\le 0} \\ {\frac{\alpha ^{\lambda } x^{\lambda -1} e^{-\alpha x} }{\Gamma (\lambda )} ,} & {x>0} \end{array}\right. ;\] 
 2) с.в. $\xi $ имеет показательное распределение с параметром $\alpha >0$, если плотность её распределения:
 \[f_{\xi } (x)=\left\{\begin{array}{cc} {0,} & {x\le 0} \\ {\alpha e^{-\alpha x} ,} & {x>0} \end{array}\right. .\] 
+
+\end{ordre} 
+
+\end{problem}
+
+\begin{problem}
+
+Доказать локальную предельную теорему:
+
+\noindent Пусть $0<p<1$ и $X_{i} $, $i=1,...,n$ - независимые случайные величины, имеющие распределение:
+\[X_{i} =\left\{\begin{array}{cc} {1,} & {p,} \\ {-1,} & {q=1-p;} \end{array}\right. \] 
+Тогда равномерно по всем $x=O\left(\sqrt{n} \right)$ таким, что $(p-q)n+x$ целое неотрицательное число
+\[P\left\{\sum _{i=1}^{n}X_{i} =(p-q)n+x \right\}\sim \frac{1}{\sqrt{2\pi npq} } \exp \left\{-\frac{x^{2} }{2npq} \right\}\] 
+при $n\to \infty $. 
+
+\begin{ordre}
+Воспользоваться формулой Стирлинга
+\end{ordre}
+
+\begin{remark}
+Пусть $n=2k$ и $p=\frac{1}{2} $, тогда вероятность того, что число единиц в точности рано числу минус единиц мало (но не экспоненциально мало):
+\[P\left\{\sum _{i=1}^{2k}X_{i} =k \right\}\sim \frac{1}{\sqrt{\pi k} } \] 
+\end{remark}
+
+
+\end{problem}
+
+\begin{problem}
+В игре в рулетку колесо разделено на 38 равных секторов: 18 красных, 18 белых и два сектора (0 и 00) зеленого цвета. Пусть ставка игрока на каждом шаге равна 1\$. Обозначим $X_{i} $ - выигрыш в i-ой игре. Тогда $X_{1} ,X_{2} ,X_{3} ,...$ - независимые с.в., имеющие распределение: 
+\[X_{i} =\left\{\begin{array}{cc} {+1,} & {{\raise0.7ex\hbox{$ 18 $}\!\mathord{\left/ {\vphantom {18 38}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ 38 $}} ,} \\ {-1,} & {{\raise0.7ex\hbox{$ 20 $}\!\mathord{\left/ {\vphantom {20 38}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ 38 $}} ;} \end{array}\right. \] 
+Пусть сыграно $n=361=19^{2} $ партий. Оцените с помощью ЦПТ $P\left(\sum _{i=1}^{n}X_{i}  \ge 0\right)$ и с помощью неравенства Берри-Эссена оцените погрешность приближения.
+\end{problem}
+
+\begin{problem}
+(Петербургский парадокс) $X_{1} ,X_{2} ,X_{3} ,...$ - независимые с.в., имеющие распределение $P\left(X_{i} =2^{k} \right)=2^{-k} $, $k=1,2,3,...$ То есть, если в игре в орлянку $k$ раз выпал «орел», то выигрыш будет $2^{k} $. Справедливой ценой за игру называют математическое ожидание выигрыша. Но здесь $EX_{i} =\infty $, однако, для этого нужно играть бесконечное число раз и иметь бесконечно много денег. Покажите, что $\frac{S_{n} }{n\log _{2} n} \mathop{\to }\limits^{p} 1$ при $n\to \infty $, где $S_{n} =\sum _{k=1}^{n}X_{k}  $. Проинтерпретируйте результат как цена за $n$ игр?
+
+\begin{ordre} 
+
+Пусть для каждого $n$ с.в. $X_{nk} $, $1\le k\le n$ независимы. Пусть также $b_{n} >0$ с $b_{n} \to \infty $ и $\bar{X}_{nk} =X_{nk} {\rm I} \left\{X_{nk} \le b_{n} \right\}$.(где ${\rm I} \left\{...\right\}$ - индикаторная функция). Предположим, что выполняются условия:
+\[1) \sum _{k=1}^{n}P\left\{\left|X_{nk} \right|>b_{n} \right\} \mathop{\to }\limits_{n\to \infty } 0\] 
+\[2) \frac{\sum _{k=1}^{n}D\bar{X}_{nk}  }{b_{n} ^{2} } \mathop{\to }\limits_{n\to \infty } 0.\] 
+Тогда $\frac{\sum _{k=1}^{n}X_{nk}  -\sum _{k=1}^{n}E\bar{X}_{nk}  }{b_{n} } \mathop{\to }\limits^{p} 0$ при $n\to \infty $.
+
+\noindent Для этой теоремы положите $X_{nk} =X_{k} $. В качестве $b_{n} >0$ возьмите $b_{n} =2^{m(n)} $, где $m(n)$ - целое число, которое можно представить в виде $m(n)=\log _{2} n+K(n)$, $K(n)\to \infty $ при $n\to \infty $. Например, если $K(n)\le \log \log n$, то результатом применения теоремы будет $\frac{S_{n} }{n\log _{2} n} \mathop{\to }\limits^{p} 1$ при $n\to \infty $.
+
+\end{ordre} 
+
+\end{problem}
+
+\begin{problem}
+
+Случайная величина (размер выигрыша) принимает значение $2^{k} -1$ с вероятностью $p_{k} =\frac{1}{2^{k} k(k+1)} $ для $k=1,2,3,...$ и значение\textit{ $-1$} с вероятностью $p_{0} =1-\sum _{k=1}^{\infty }p_{k}  $. Проверьте, что математическое ожидание выигрыша равно нулю. Применив теорему из предыдущей задачи, покажите, что для суммарного размера выигрыша за $n$ партий ($S_{n} $) справедливо$\frac{S_{n} }{{\raise0.7ex\hbox{$ n $}\!\mathord{\left/ {\vphantom {n \log _{2} n}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ \log _{2} n $}} } \mathop{\to }\limits^{p} 1$.
+
+\begin{ordre}  
+Положите $b_{n} =2^{m(n)} $,
+
+ где $m(n)=\min \left\{m:\; 2^{-m} m^{-{\raise0.7ex\hbox{$ 3 $}\!\mathord{\left/ {\vphantom {3 2}} \right. \kern-\nulldelimiterspace}\!\lower0.7ex\hbox{$ 2 $}} } \le n^{-1} \right\}$
+\end{ordre} 
+
+\end{problem}
+
+\begin{problem}
+
+Определение: Распределение $G\left(x\right)$ называется max-устойчивым, если для любых $n=1,2,...$ существуют $a_{n} >0$ и $b_{n} \in {\mathbb R}$, такие что $G^{n} \left(a_{n} x+b_{n} \right)=G\left(x\right)$.
+
+
+(MAX-устойчивые распределения: Гумбеля, Фреше, Вейбулла). Пусть есть независимые одинаково распределенные с.в. $X_{1} ,...,X_{n} $ с распределением $F\left(x\right)$. Обозначим $X_{\left(n\right)} =\max \left\{X_{1} ,...,X_{n} \right\}$. Распределение такой с.в. $F_{X_{\left(n\right)} } \left(x\right)=\left[F\left(x\right)\right]^{n} $.
+
+\begin{enumerate}
+\item  Пусть $\mathop{\lim }\limits_{x\to \infty } e^{\alpha x} \left(1-F\left(x\right)\right)=\beta $, где $\alpha ,\beta >0$ и $x\in {\mathbb R}$. Покажите, что $X_{\left(n\right)} -\frac{1}{\alpha } \ln \left(\beta n\right)\mathop{\to }\limits^{d} \chi $, где $\chi $ имеет распределение Гумбеля: $P\left(\chi \le x\right)=e^{-e^{-\alpha x} } $, $x\in {\mathbb R}$.
+
+\item  Пусть $\mathop{\lim }\limits_{x\to \infty } x^{\alpha } \left(1-F\left(x\right)\right)=\beta $, где $\alpha ,\beta >0$ и $x\in {\mathbb R}_{+} $. Покажите, что $X_{\left(n\right)} \left(\beta n\right)^{-\frac{1}{\alpha } } \mathop{\to }\limits^{d} \eta $, где $\eta $ имеет распределение Фреше: $P\left(\eta \le x\right)=e^{-x^{-\alpha } } $, $x>0$.
+
+\item  Пусть $\mathop{\lim }\limits_{x\to \infty } \left(c-x\right)^{\alpha } \left(1-F\left(x\right)\right)=\beta $, $F\left(c\right)=1$,где $\alpha ,\beta >0$, $c\in {\mathbb R}$ и $x\in {\mathbb R}$. Покажите, что $\left(X_{\left(n\right)} -c\right)\left(\beta n\right)^{\frac{1}{\alpha } } \mathop{\to }\limits^{d} \gamma $, где $\gamma $ имеет распределение Вейбулла: $P\left(\gamma \le x\right)=e^{-(-x)^{-\alpha } } $, $x<0$.
+
+\end{enumerate}
+
+\noindent Покажите, что распределения Гумбеля, Фреше, Вейбулла являются max-устойчивыми.
+
+\begin{remark}
+В классе max-устойчивых распределений распределения Гумбеля, Фреше, Вейбулла исчерпывают все возможные типы предельных распределений.
+\end{remark}
+
+\end{problem}
+
+
+\begin{problem}
+
+Пусть есть независимо одинаково распределенные с.в. $X_{1} ,...,X_{n} $ с распределением Коши $\alpha =1$, т.е. $F\left(x\right)=\frac{2}{\pi } \int _{-\infty }^{x}\frac{dy}{1+y^{2} }  $. Воспользовавшись предыдущей задачей, найдите предельное распределение для должным образом нормированных с.в. $X_{\left(n\right)} $.
+
+\end{problem}
+
+\begin{problem}
+Пусть $\vec{X}_{n} \in {\mathbb R}^{m} $, $n=1,2,...$ - независимые одинаково распределенные случайные векторы. $M\vec{X}_{n} =\vec{0}$, $M\vec{X}_{n} \vec{X}_{n}^{T} =R$ ($R$ - неотрицательно определенная матрица - по определению, однако, мы дополнительно будем считать, что $R$ - положительно определенная). С помощью аппарата характеристических функций докажите, что тогда для любого борелевского множества $B\subseteq {\mathbb R}^{m} $:
+\[\mathop{\lim }\limits_{N\to \infty } P\left(\frac{1}{\sqrt{N} } \sum _{n=1}^{N}\vec{X}_{n}  \in B\right)=\left(\left(2\pi \right)^{m} \det R\right)^{-{1\mathord{\left/ {\vphantom {1 2}} \right. \kern-\nulldelimiterspace} 2} } \int _{B}e^{-\left(\vec{x},R\vec{x}\right)} d\vec{x} .\] 
+
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+
+\begin{problem}
+\end{problem}
+
+\begin{problem}
+\end{problem}
+
+
+\begin{problem}
 \end{problem}
