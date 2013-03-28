@@ -4,7 +4,7 @@
 \usepackage{amsthm,amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
-\usepackage[dvips]{graphicx}
+\usepackage{graphicx}
 \usepackage{longtable}
 \usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
@@ -78,8 +78,7 @@ Title
 \newtheorem{fixme}{\noindent\normalsize\bf{}\frownie{} fixme}
 \renewcommand{\thefixme}{}
 
-\newtheorem{ordre}{\noindent\normalsize\textit{Указание}}
-\renewcommand{\theordre}{}
+\newtheorem*{ordre}{\noindent\normalsize\bf{}Указание}
 
 \newenvironment{solution}{\begin{proof}\vspace{1em}} {\end{proof} \vspace{2em}}
 
@@ -111,21 +110,21 @@ Title
 
 \include{standart_tasks}
 
-\include{zb4}
-
-\include{combinatorics}
-
 \include{generative_functions}
+
+\include{zb4}
 
 \include{monte_carlo}
 
-\include{algorithms}
+\include{information}
 
-\include{measure_concentration}
+\include{combinatorics}
+
+\include{algorithms}
 
 \include{geometric_probability}
 
-\include{information}
+\include{measure_concentration}
 
 \include{stats}
 
