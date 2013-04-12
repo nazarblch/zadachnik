@@ -1,6 +1,68 @@
 \section{Законы больших чисел и предельные теоремы}
 
 \begin{problem}
+Пусть случайная величина $X_n$ принимает значения 
+$2^n$ и $-2^n$ с вероятностями $1/2$. Выполняется ли для последовательности независимых случайных величин 
+$X_1$, $X_2$, $\ldots$ закон больших чисел? 
+\end{problem}
+
+\begin{ordre}
+Покажите, что усредненная сумма последовательности не сходится по вероятности к своему математическому ожиданию, зафиксировав знаки последних двух слагаемых. 
+\end{ordre}
+
+
+\begin{problem}
+Пусть случайная величина $X_n$ принимает значения 
+$n$, $0$ и $-n$ с вероятностями $1/4$, $1/2$, $1/4$. Выполняется ли для последовательности независимых случайных величин 
+$X_1$, $X_2$, $\ldots$ закон больших чисел? 
+\end{problem}
+
+\begin{ordre}
+ 
+$$
+S_n\xrightarrow{p}0 \,\Leftrightarrow\, S_n\xrightarrow{D}0 \,\Leftrightarrow\, \varphi_{S_n}(t)
+\xrightarrow{n\to\infty}1 , 
+$$
+
+где $S_n=\frac{X_1+\ldots +X_n}{n}$
+
+\end{ordre}
+
+
+\begin{problem}
+Пусть $\{ X_n\}_{n=1}^{\infty}$ -- последовательность независимых случайных величин, причем $X_n$ принимает значения 
+$-\sqrt{n}$, $\sqrt{n}$ с вероятностями $1/2$ каждое. 
+Выполняется для этой последовательности закон больших чисел? 
+\end{problem}
+
+
+\begin{problem}
+При каких значениях $\alpha > 0$ к последовательности независимых случайных величин $\{ X_n\}_{n=1}^{\infty}$, 
+таких что ${\mathbb P}\{ X_n=n^{\alpha}\}={\mathbb P}\{ X_n=-n^{\alpha}\}=1/2$, применим закон больших чисел? 
+\end{problem}
+
+\begin{ordre}
+Докажите достаточное условие выполнения ЗБЧ:
+ \[
+Var S_n \xrightarrow {n\to\infty}0
+\] 
+\end{ordre}
+
+
+\begin{problem}
+Пусть $\{ X_n\}_{n=1}^{\infty}$ --- последовательность случайных величин с дисперсиями $\sigma_i^2$. Доказать, что если все 
+корреляционные моменты (ковариации) $R_{ij}$ случайных величин $X_i$ и $X_j$ неположительны и при $n\to\infty$ 
+$\frac{\sum\limits_{i=1}^{n} \sigma_i^2}{n^2}\to 0$, то для последовательности $\{ X_n\}_{n=1}^{\infty}$ выполняется закон больших чисел. 
+\end{problem}
+
+\begin{problem}
+Пусть $\{ X_n\}_{n=1}^{\infty}$ --- последовательность случайных величин с равномерно ограниченными дисперсиями, причем каждая 
+случайная величина $X_n$ зависит только от $X_{n-1}$ и $X_{n+1}$, но не зависит от остальных $X_i$. Доказать выполнение для этой 
+последовательности закона больших чисел.
+\end{problem}
+
+
+\begin{problem}
 Пусть при любом $\lambda >0$ с.в. $\xi _{\lambda } $ имеет распределение Пуассона. Докажите, что $\frac{\xi _{\lambda } -\lambda }{\sqrt{\lambda } } $ слабо сходится (по распределению) к стандартному нормальному распределению при $\lambda \to \infty $.
 
 \begin{ordre}
@@ -72,7 +134,22 @@ n! \sim \sqrt{2 \pi n} \frac{n^n}{e^n}
 \[P\left\{\sum _{i=1}^{2k}X_{i} =k \right\}\sim \frac{1}{\sqrt{\pi k} } \] 
 \end{remark}
 
+\end{problem}
 
+\begin{problem}
+Книга объемом $500$ страниц содержит $50$ опечаток. Оценить вероятность того, что на случайно выбранной странице 
+имеется не менее трех опечаток. (Использовать нормальное и пуассоновское приближения, сравнить результаты). 
+\end{problem}
+
+\begin{problem}
+В тесто для выпечки булок с изюмом замешано $N$ изюмин. Всего из данного теста выпечено $K$ булок. Оценить вероятность того, 
+что в случайно выбранной булке число изюмин находится в пределах от $a$ до $b$. 
+\end{problem}
+
+\begin{problem}
+В поселке $N$ жителей, каждый из которых в среднем $n$ раз в месяц ездит в город, выбирая дни поездки независимо от остальных. 
+Поезд из поселка в город идет один раз в сутки. Какова должна быть вместимость поезда для того, чтобы он переполнился с вероятностью, 
+не превышающей заданного числа $\beta$? 
 \end{problem}
 
 \begin{problem}
@@ -147,18 +224,473 @@ n! \sim \sqrt{2 \pi n} \frac{n^n}{e^n}
 \end{problem}
 
 \begin{problem}
+Докажите, что при $n\to\infty$ 
+$$
+X_n\xrightarrow{L_2} X \,\Rightarrow\, X_n\xrightarrow{L_1}X \, \Rightarrow\, X_n\xrightarrow{P}X 
+\, \Leftarrow\, X_n\xrightarrow{\text{ п.н. }}X , 
+$$
+$$
+X_n\xrightarrow{P}X \, \Rightarrow\, X_n\xrightarrow{d}X . 
+$$
+С помощью контрпримеров покажите, что никакие другие стрелки импликации в эту схему в общем случае добавить нельзя. 
+При каких дополнительных условиях можно утверждать, что 
+$$
+X_n\xrightarrow{\text{ п.н. }}X  \, \Rightarrow\, X_n\xrightarrow{L_1}X ?
+$$
+Кроме того, показать, что 
+$$
+X_n\xrightarrow{P} X \; (n\to\infty) \,\Leftrightarrow\, \rho_P(X_n,X)={\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)
+\xrightarrow{n\to\infty} 0 . 
+$$
+Также показать, что 
+$$
+X_n \xrightarrow{d}c\quad \Rightarrow \quad X_n \xrightarrow{P}c, \text{ где } c=\const \text{ (не с.в.) }
+$$
+\end{problem}
+
+\begin{fixme}
+To be refactored
+\end{fixme}
+
+\begin{solution}
+\begin{enumerate}
+\item $X_n\xrightarrow{\text{ п.н. }}X \,\Rightarrow\, X_n\xrightarrow{P}X$. 
+
+Это следует из теоремы из функционального анализа: из сходимости почти наверное последовательности измеримых 
+функций $\{ X_n\}$ следует сходимость по мере, в частности, по вероятностной мере. 
+
+\item $X_n\xrightarrow{L_1}X \, \Rightarrow\, X_n\xrightarrow{P}X$. 
+
+Это следует из неравенства Маркова: 
+$$
+{\mathbb P}(|X_n-X|>\varepsilon)\leqslant \frac{{\mathbb E}|X_n-X|}{\varepsilon} . 
+$$
+
+\item $X_n\xrightarrow{L_2} X \,\Rightarrow\, X_n\xrightarrow{L_1}X$. 
+
+Это следует из неравенства $\bigl( {\mathbb E}|X_n-X|\bigr)^2 \leqslant {\mathbb E}|X_n-X|^2$, являющееся неравенством Йенсена вида 
+$$
+g({\mathbb E}Y)\leqslant {\mathbb E}g(Y) 
+$$
+для выпуклой функции $g(x)=x^2$ при $Y=|X_n-X|$. 
+
+\item $X_n\xrightarrow{P}X \, \Rightarrow\, X_n\xrightarrow{d}X$ . 
+
+Как доказывается в курсе теории вероятности, сходимость по распределению эквивалентна слабой сходимости, поэтому достаточно доказать, что 
+для любой ограниченной непрерывной функции $\varphi(\cdot)$ выполняется 
+\begin{equation}
+\label{WeakConverg}
+\lim\limits_{n\to\infty} {\mathbb E}\varphi(X_n)={\mathbb E}\varphi(X) . 
+\end{equation}
+Имеем 
+$$
+\forall\varepsilon>0, \quad \lim\limits_{n\to\infty} {\mathbb P}(|X_n-X|>\varepsilon)=0 . 
+$$
+$$
+|{\mathbb E}\varphi(X_n)-{\mathbb E}\varphi(X)|\leqslant {\mathbb E}|\varphi(X_n)-\varphi(X)|=\int\limits_{\Omega} 
+|\varphi(X_n(\omega))-\varphi(X(\omega))|\, P(d\omega)=
+$$
+$$
+=\int\limits_{|\varphi(X_n(\omega))-\varphi(X(\omega))|>\varepsilon}\!\!\!\! |\varphi(X_n(\omega))-\varphi(X(\omega))|\, P(d\omega)\, +
+\int\limits_{|\varphi(X_n(\omega))-\varphi(X(\omega))|\leqslant\varepsilon}\!\!\!\! |\varphi(X_n(\omega))-\varphi(X(\omega))|\, P(d\omega). 
+$$
+Из ограниченности $\varphi$ имеем $|\varphi(x)|<C$, $|\varphi(x)-\varphi(y)|<2C$, поэтому 
+\begin{multline*}
+\int\limits_{\Omega} |\varphi(X_n(\omega))-\varphi(X(\omega))|\, P(d\omega)< 
+2C\cdot {\mathbb P}(|X_n-X|>\varepsilon)+\\
++\int\limits_{|\varphi(X_n(\omega))-\varphi(X(\omega))|\leqslant\varepsilon} |\varphi(X_n(\omega))-\varphi(X(\omega))|\, P(d\omega) . 
+\end{multline*}
+Из непрерывности $\varphi$ следует, что 
+$$
+\forall\delta>0 \; \exists\varepsilon>0: 
+\quad |X_n(\omega)-X(\omega)|\leqslant\varepsilon \; |\varphi(X_n(\omega))-\varphi(X(\omega))|<\delta \;\text{ и }
+$$
+$$
+2C\cdot {\mathbb P}(|X_n-X|>\varepsilon)+
+\int\limits_{|\varphi(X_n(\omega))-\varphi(X(\omega))|\leqslant\varepsilon} |\varphi(X_n(\omega))-\varphi(X(\omega))|\, P(d\omega)
+<2C\cdot {\mathbb P}(|X_n-X|>\varepsilon)+\delta . 
+$$
+Из сходимости $X_n\xrightarrow{P}X$ следует, что $\exists N:\; \forall n\geqslant N\,\Rightarrow \, $ 
+${\mathbb P}(|X_n-X|>\varepsilon)<\frac{\delta}{2C}$, откуда 
+$$
+|{\mathbb E}\varphi(X_n)-{\mathbb E}\varphi(X)|<2\delta . 
+$$
+Свойство $(\ref{WeakConverg})$ доказано. 
+
+\item Из сходимости по распределению не следует сходимость по вероятности. 
+
+Рассматривается вероятностная тройка $(\Omega,\, {\mathcal F},\, {\mathbb P})$, где $\Omega=[0, 1]$, 
+${\mathcal F}$ --- $\sigma$-алгебра борелевских множеств из $\Omega$, ${\mathbb P}$ --- мера Лебега. 
+Случайные величины $X(\omega)=\omega$ и $Y(\omega)=1-\omega$ имеют одну и ту же функцию распределения 
+$$
+F_X(x)=F_Y(x)=x\cdot {\mathbb I}_{\{ x\in[0,1]\}} . 
+$$
+Поэтому последовательность с.в. $X,Y,X,Y,\ldots$ сходится по распределению, т.к. каждый элемент последовательности имеет 
+одну и ту же функцию распределения. При этом, очевидно, сходимости по вероятности нет, т.к. например, 
+$$
+{\mathbb P}(|X-Y|>0.5)=0.5 . 
+$$
+
+Также заметим, что из данного примера следует, что из сходимости по распределению не следует сходимость в $L_1$, в $L_2$ 
+и почти наверное, поскольку, как уже доказано, каждая из них влечет сходимость по вероятности. 
+
+\item Из сходимости по вероятности не следует сходимость почти наверное. 
+
+Рассматривается та же вероятностная тройка $(\Omega,\, {\mathcal F},\, {\mathbb P})$. 
+Рассмотрим в качестве последовательности с.в. серию бегущих импульсов: 
+$$
+X_1={\mathbb I}_{[0,1/2]},\, X_2={\mathbb I}_{[1/2,1]},\, X_3={\mathbb I}_{[0,1/4]},\, X_4={\mathbb I}_{[1/4,1/2]}, \ldots, 
+$$
+в общем виде $n=2^k-2+i$ $\Rightarrow\, X_n={\mathbb I}_{[\frac{i-1}{2^k},\frac{i}{2^k}]}$. 
+
+Последовательность $\{ X_n\}$ не сходится ни в одной точке $\omega$, т.к. при сколь угодно больших $n$ с.в. $X_n$ 
+равна как $0$, так и $1$. При этом $X_n\xrightarrow{P}X\equiv 0$, т.к. при малых $\varepsilon>0$ 
+$$
+{\mathbb P}(|X_n-X|>\varepsilon)={\mathbb P}(|X_n|=1)=\frac{1}{2^{[\log n]}}\xrightarrow{n\to\infty} 0 . 
+$$
+
+\item Из сходимости в $L_1$ не следует сходимость почти наверное. 
+
+Последовательность $\{ X_n\}$ из предыдущего пункта сходится к $X\equiv 0$ в $L_1$: 
+$$
+{\mathbb E}|X_n-X|={\mathbb E}X_n=\frac{1}{2^{[\log n]}}\xrightarrow{n\to\infty} 0 , 
+$$
+но, как отмечалось, не сходится почти наверное. 
+
+\item Пример, когда из сходимости почти наверное не следует сходимость в $L_1$ или в $L_2$. Из данного примера также 
+следует, что из сходимости по вероятности не следует сходимость в $L_1$ или в $L_2$. 
+
+Рассматривается та же вероятностная тройка $(\Omega,\, {\mathcal F},\, {\mathbb P})$. Строим последовательность с.в. 
+$$
+X_n(\omega)=n^2 \cdot {\mathbb I}_{[0,\frac{1}{n}]} . 
+$$
+Из данной формулы следует, что последовательность $\{ X_n\}$ сходится к нулю почти наверное и по вероятности. Однако 
+$$
+{\mathbb E}|X_n|=n^2\cdot\frac{1}{n}=n \xrightarrow{n\to\infty} \infty , 
+$$
+$$
+{\mathbb E}|X_n|^2=n^4\cdot\frac{1}{n}=n^3 \xrightarrow{n\to\infty} \infty . 
+$$
+Поэтому последовательность $\{ X_n\}$ не сходится в $L_1$ и в $L_2$. 
+
+\item Выполнена импликация 
+$$
+X_n\xrightarrow{\text{ п.н. }}X  \, \Rightarrow\, X_n\xrightarrow{L_1}X , 
+$$
+т.е. возможен предельный переход под знаком математического ожидания, если семейство с.в. $\{ X_n\}$ является равномерно интегрируемым: 
+$$
+\sup\limits_n {\mathbb E}\bigl[ |X_n|\cdot {\mathbb I}_{\{ |X_n|>c\}} \bigr]\xrightarrow{c\to +\infty}0 . 
+$$
+
+\item Покажем, что 
+$$
+X_n\xrightarrow{P} X \; (n\to\infty) \,\Leftrightarrow\, \rho_P(X_n,X)={\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)
+\xrightarrow{n\to\infty} 0 . 
+$$
+
+\underline{Необходимость}. Очевидно, $\frac{|X_n-X|}{1+|X_n-X|}<1$, $\frac{|X_n-X|}{1+|X_n-X|}\leqslant |X_n-X|$. 
+Зафиксируем произвольное $\varepsilon>0$. Имеем 
+\begin{multline*}
+{\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)=\int\limits_{|X_n-X|\leqslant\varepsilon} 
+\frac{|X_n(\omega)-X(\omega)|}{1+|X_n(\omega)-X(\omega)|}\, P(d\omega)+\\
++\int\limits_{|X_n-X|>\varepsilon}
+\frac{|X_n(\omega)-X(\omega)|}{1+|X_n(\omega)-X(\omega)|}\, P(d\omega)
+\leqslant \varepsilon+{\mathbb P}(|X_n-X|>\varepsilon) . 
+\end{multline*}
+$X_n\xrightarrow{P} X$, поэтому ${\mathbb P}(|X_n-X|>\varepsilon)\xrightarrow{n\to\infty}0$ и при $n>N_{\varepsilon}$: 
+$$
+{\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr) \leqslant \varepsilon+{\mathbb P}(|X_n-X|>\varepsilon)
+\leqslant 2\varepsilon . 
+$$
+Это и означает, что 
+$$
+{\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)\xrightarrow{n\to\infty} 0 . 
+$$
+
+\underline{Достаточность}. 
+Доказываем от противного: пусть нет сходимости последовательности $\{ X_n\}$ по вероятности, тогда 
+$$
+\exists\varepsilon_0>0, \; \delta>0, \text{ т.ч. } \forall N, \,\exists n>N: \; 
+{\mathbb P}(|X_n-X|>\varepsilon_0)>\delta . 
+$$
+Т.к. функция $g(y)=\frac{y}{1+y}$ монотонно возрастает, для таких $n$ получим 
+$$
+{\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)\geqslant \int\limits_{|X_n-X|>\varepsilon_0} 
+\frac{|X_n(\omega)-X(\omega)|}{1+|X_n(\omega)-X(\omega)|}\, P(d\omega) > \delta\cdot\frac{\varepsilon_0}{1+\varepsilon_0} . 
+$$
+Это противоречит условию ${\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)\xrightarrow{n\to\infty} 0$, 
+поэтому исходное предположение неверно, что завершает доказательство. 
+
+\item 
+Итак, пусть $X_n\xrightarrow{d}c$, $c=\const$. Это означает, что $\forall \varepsilon>0$, 
+$$
+{\mathbb P}(|X_n-c|<\varepsilon)\xrightarrow{n\to\infty}{\mathbb P}(|c-c|<\varepsilon)=1 . 
+$$
+Это по определению и означает, что $X_n\xrightarrow{P}c$ (при $n\to\infty$). 
+
+\end{enumerate}
+
+\end{solution}
+
+
+
+\begin{problem}
+Пусть $x_1,\ldots,x_n$ --- независимые одинаково распределенные с.в.. Пусть также характеристическая функция с.в. $x_k$ представляется 
+в окрестности $t=0$ в виде 
+$$
+\varphi_{x_k}(t)={\mathbb E}(e^{it x_k})=1+imt+o(t). 
+$$
+Используя то, что 
+$$
+S_n \xrightarrow{d}c\quad \Rightarrow \quad S_n \xrightarrow{P}c, \text{ где } c=\const \text{ (не с.в.) }
+$$
+и 
+$$
+S_n \xrightarrow{d}S\quad \Leftrightarrow \quad \varphi_{S_n}(t) \to \varphi_S(t), \text{ равномерно по $t$ в окрестности $t=0$ } , 
+$$
+найдите 
+$$
+S_n=\frac{1}{n}\sum\limits_{i=1}^{n} x_i \xrightarrow{P} ?
+$$
+\end{problem}
+
+
+\begin{problem}
+Пусть $x_1, x_2, x_3, \ldots$ --- последовательность независимых одинаково распределенных с.в.. Положим 
+$S_n=\sum\limits_{k=1}^{n} x_k$. Покажите, что 
+
+\begin{enumerate}
+\item[1)](з.б.ч.) если ${\mathbb E}(|x_k|)<\infty$, то $S_n/n\xrightarrow{P} m$ при $n\to\infty$, где $m={\mathbb E}(x_k)$; 
+
+\item[2)](ц.п.т.) если ${\mathbb E}(x_k^2)<\infty$, то $(S_n-m\cdot n)/\sqrt{n\cdot D}\xrightarrow{d} N(0,1)$ при $n\to\infty$, 
+где $D=\Var x_k$. 
+
+\item[3)](задача математической статистики) Предположим, что независимо $n$ раз кидается монетка с вероятностью выпадения орла в каждом 
+опыте равной $p$ (точного значения $p$ мы не знаем, а знаем лишь то, что $0.1\leqslant p\leqslant 0.9$), т.е. $x_k\in\Be(p)$. 
+Сколько раз нужно кинуть монетку (оцените $p$), чтобы оценка ${\bar p}(x)=\frac{\sum\limits_{k=1}^{n}x_k}{n}$ с вероятностью 
+$\gamma\geqslant 0.95$ отличалась от истинного значения $p$ не более, чем на величину $\delta=0.01$? Применить неравенство Чебышева 
+и предельную теорему (точность, которую дает ц.п.т., оцените с помощью неравенства Берри – Эссена). Сравнить результаты. 
+\end{enumerate}
+\end{problem}
+
+\begin{ordre}
+
+Неравенство Берри – Эссена: 
+$$
+\sup\limits_{x} \Bigl|{\mathbb P}\Bigl(\sum\limits_{k=1}^{n}\frac{x_k-np}{\sigma\sqrt{n}}<x\Bigr)-\Phi(x)\Bigr|\leqslant 
+\frac{C_0\mu^3}{\sigma^3\sqrt{n}} . 
+$$
+Здесь $C_0<0.7056$, $\,\sigma^2=\Var x_k=p(1-p)$, $\Phi(x)=\int\limits_{-\infty}^{x}\tfrac{e^{-\frac{t^2}{2}}}{\sqrt{2\pi}}\, dt$, 
+$$
+\mu^3={\mathbb E}|x_k-p|^3. 
+$$
+
+\end{ordre}
+
+
+\begin{problem}
+Пусть при каждом $n\geqslant 1$ независимые с.в. $x_{1n}, x_{2n},\ldots, x_{nn}$ таковы, что $x_{kn}\in \Be(p_{kn})$, где 
+$\max\limits_{1\leqslant k\leqslant n} p_{kn}\xrightarrow{n\to\infty}0$, $\sum\limits_{k=1}^{n}p_{kn}\xrightarrow{n\to\infty}\lambda$. 
+Тогда 
+\begin{equation}
+\label{TPois}
+{\mathbb P}(S_n=m)\xrightarrow{n\to\infty} e^{-\lambda}\frac{\lambda^m}{m!}, \quad m=0,1,2,\ldots, \quad 
+\text{ где } S_n=\sum\limits_{k=1}^{n} x_{kn} . 
+\end{equation}
 \end{problem}
 
 \begin{problem}
+В течение дня вы играете в казино и участвуете в $N=100$ независимых розыгрышах. В каждом розыгрыше вы выигрываете с вероятностью 
+$p=0.01$. Оцените вероятность того, что вам не удастся ни разу выиграть. Оцените вероятности того, что вы выиграете ровно 
+один раз и ровно три раза.
+
+Предположим, что вы ходите играть в казино в течении $n=100$ дней (количество розыгрышей в день и вероятность выиграть не менялись). 
+Оцените вероятность того, что за эти $100$ дней вы в общей сложности выиграете не менее $100$ раз, не менее $300$ раз. 
+
+\end{problem}
+
+
+
+\begin{problem}
+Показать, что при бросании симметричной монеты $n$ раз отношение числа выпадений герба к числу выпадений решки почти наверное стремится 
+к $1$ при $n\to\infty$, а вероятность того, что число выпадений герба в точности равняется числу выпадений решки, при четном числе 
+бросаний, стремится к $0$ при $n\to\infty$. 
+\end{problem}
+
+
+
+\begin{problem}
+Пусть с.в. $x_n\in \Gamma(\lambda,n)$. Покажите, что из ц.п.т. следует 
+$$
+\frac{x_n-m(\lambda)\cdot n}{\sigma(\lambda)\cdot\sqrt{n}} \xrightarrow{d} N(0,1) \text{ при } n\to\infty . 
+$$
+Найдите $m(\lambda)$, $\sigma(\lambda)$. 
+\end{problem}
+
+
+
+\begin{problem}
+Пусть $X_n$ --- последовательность независимых с.в., сходящаяся по вероятности к с.в. $X:\; X_n\xrightarrow{P}X$. Докажите, 
+что с.в. $X$ вырождена, т.е. $X\equiv x$, где $x$ --- некоторое число. 
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}
+\item
+Из курса функционального анализа известно, что из любой сходящейся по мере (в частности, по вероятностной) последовательности 
+измеримых функций (в частности, с.в.) можно выделить подпоследовательность, сходящуюся почти всюду (п.н.): 
+$$
+X_{n_k}\xrightarrow{\text{ п.н. }}X \text{ при } k\to\infty . 
+$$
+Если ввести $\sigma$-алгебры $\Xi_n^{\infty}=\sigma(X_n, X_{n+1},\ldots)$ и хвостовую $\sigma$-алгебру 
+${\mathcal X}=\bigcap\limits_{n=1}^{\infty}\Xi_{n}^{\infty}$, то событие 
+$$
+A=\{ \omega: \, X=\lim\limits_{k\to\infty} X_{n_k}\in B \} \in {\mathcal X} , 
+$$
+где $B$ --- некоторое борелевское множество на ${\mathbb R}$. 
+
+\item
+Из закона нуля и единицы Колмогорова для всякого разбиения прямой ${\mathbb R}$ на борелевские множества $\{ B_m\}_{m\geqslant 1}$ 
+ровно для одного $m=m_0:$ $\quad {\mathbb P}(A_{B_{m_0}})=1$, для остальных $m:\quad {\mathbb P}(A_{B_m})=0$, где 
+$$
+A_{B_m}=\{ \omega: \, X=\lim\limits_{k\to\infty} X_{n_k}\in B_m \} . 
+$$
+Рассматривая для определенности $B_m=[m,m+1)$, далее для разбиения $\{ B^2_m\}_{m=1}^N$ множества $B_{m_0}$, 
+$\mu(B^2_m)=\frac{1}{N}$, при некотором $m=m_2$ получим ${\mathbb P}(A_{B^2_{m_2}})=1$. 
+
+Рассуждая так же для разбиения множества $B^2_{m_2}$ и так далее, получим систему вложенных стягивающихся отрезков $\{ B_i\}$, 
+$\mu(B_i)\xrightarrow{i\to\infty}0$, так что 
+$$
+{\mathbb P}\bigl(X=\lim\limits_{k\to\infty} X_{n_k}\in B_i \bigr)=1 . 
+$$
+Отсюда для единственной общей точки $\{ x\}=\bigcap\limits_{i=1}^{\infty}B_i$ получим 
+$$
+{\mathbb P}\bigl(X=\lim\limits_{k\to\infty} X_{n_k}=x \bigr)=1 , 
+$$
+т.е. $X=\lim\limits_{k\to\infty} X_{n_k}\equiv x$ --- вырожденная с.в. 
+
+\end{enumerate}
+\end{solution}
+
+
+\begin{problem}
+Число $\alpha$ из отрезка $[0, 1]$ назовем нормально приближаемым рациональными числами, если найдутся $c,\varepsilon>0$ такие, что 
+при любом натуральном $q$ 
+\begin{equation}
+\label{BorelKantel}
+\min\limits_{p\in {\mathbb Z}} \Bigl|\alpha-\frac{p}{q} \Bigr|\geqslant \frac{c}{q^{2+\varepsilon}} . 
+\end{equation}
+Используя лемму Бореля-Кантелли, докажите, что множество нормально приближаемых чисел на отрезке $[0, 1]$ имеет Лебегову меру $1$. 
+
+\end{problem}
+
+\begin{problem}
+В некотором городе прошел второй тур выборов. Выбор был между двумя кандидатами $A$ и $B$ (графы <<против всех>> на этих выборах не было). 
+Сколько человек надо опросить на выходе с избирательных участков, чтобы исходя из ответов можно было определить долю проголосовавших 
+за кандидата $A$ с точностью $5\%$ и с вероятностью не меньшей $0.99$. Считайте, что исходя из голосования в первом туре, известно, 
+что каждый из кандидатов наберет не меньше $30\%$ голосов избирателей. 
 \end{problem}
 
 
 \begin{problem}
+На множестве $n!$ перестановок $n$ различных элементов задано равномерное распределение. Обозначим через $\xi_k$ случайную величину, 
+равную числу инверсий, образованных элементом с номером $k$, т.е. равную числу элементов с номерами меньшими чем $k$, 
+которые стоят в перестановке правее элемента с номером $k$. Покажите, что 
+$$
+\frac{\sum\limits_{k=1}^{n}\xi_k -\left.n^2\right/4}{\left.n^{3/2}\right/6}\xrightarrow{d} N(0,1) \quad \text{ при } n\to\infty . 
+$$
 \end{problem}
 
-\begin{problem}
-\end{problem}
+\begin{solution}
+\begin{enumerate}
 
+\item Введем с.в. $\xi_{k,i}$, $k>i$: 
+$$
+\xi_{k,i}={\mathcal I}(\text{<<$k$ находится левее числа $i$>>}) . 
+$$
+Если позициии всех чисел, кроме $k$ и $i$, фиксированы, то в одной из двух расстановок $k$ находится левее числа $i$, поэтому 
+${\mathbb E}\xi_{k,i}=\left.1\right/2$. 
 
-\begin{problem}
-\end{problem}
+При $i<j<k$, если позиции всех чисел, кроме $k$, $i$ и $j$, фиксированы, то в двух из $6$ расстановок число $k$ находится 
+левее чисел $i$ и $j$, а в одной расстановке $k$ левее $j$, и $j$ находится левее $i$, отсюда 
+${\mathbb E}(\xi_{k,i}\xi_{k,j})=\left.1\right/3$, ${\mathbb E}(\xi_{k,j}\xi_{j,i})=\left.1\right/6$. 
+
+Наконец, если числа $i$, $j$, $k$, $l$ попарно различны, $i<j$, $k<l$, то с.в. $\xi_{j, i}$ и $\xi_{l,k}$ независимы и 
+${\mathbb E}(\xi_{j,i}\xi_{l,k})={\mathbb E}\xi_{j,i}\cdot {\mathbb E}\xi_{l,k}=\left.1\right/4$. 
+
+Поскольку по определению 
+$$
+\xi_k=\xi_{k,1}+\xi_{k,2}+\ldots +\xi_{k,k-1}, 
+$$
+имеем ${\mathbb E}\xi_k=\left.(k-1)\right/2$. Далее 
+$$
+{\mathbb E}\xi_k^2={\mathbb E}\xi_{k,1}^2+\ldots+{\mathbb E}\xi_{k,k-1}^2+2\sum\limits_{i<j<k}{\mathbb E}(\xi_{k,i}\xi_{k,j})=
+$$
+$$
+=\frac{k-1}{2}+2\cdot\frac{(k-1)(k-2)}{2}\cdot\frac{1}{3}=\frac{2k^2-3k+1}{6} , 
+$$
+откуда $\Var \xi_k={\mathbb E}\xi_k^2-\bigl({\mathbb E}\xi_k \bigl)^2=\frac{k^2-1}{12}$. 
+
+Также вычислим при $k>m$
+$$
+{\mathbb E}\xi_k \xi_m={\mathbb E}(\xi_{k,1}+\xi_{k,2}+\ldots +\xi_{k,k-1})(\xi_{m,1}+\xi_{m,2}+\ldots +\xi_{m,m-1})=
+$$
+$$
+={\mathbb E}\bigl( \xi_{k,1}\xi_{m,1}+\ldots +\xi_{k,m-1}\xi_{m,m-1} \bigr)+{\mathbb E}\xi_{k, m}(\xi_{m,1}+\ldots +\xi_{m,m-1})+
+$$
+$$
++\sum\limits_{0<i<k, 0<j<m, i\ne j, i\ne m}{\mathbb E}\xi_{k, i}\xi_{m,j}=\frac{m-1}{3}+
+\frac{m-1}{6}+\frac{(k-3)(m-1)}{4}=\frac{(k-1)(m-1)}{4}= {\mathbb E}\xi_k \cdot{\mathbb E}\xi_m. 
+$$
+Это означает, что с.в. $\xi_k$ и $\xi_m$ некоррелированы, $k\ne m$. 
+
+\item Введем с.в. $T_n=\sum\limits_{k=1}^{n}\xi_k$ --- общее число инверсий в перестановке. Имеем 
+$$
+{\mathbb E}T_n=\sum\limits_{k=1}^{n} {\mathbb E}\xi_k=\sum\limits_{k=1}^{n} \frac{k-1}{2}=
+\frac{1}{4} n(n-1)=\frac{n^2}{4}\bigl(1+O(\left.1\right/n)\bigr) . 
+$$
+Из некоррелированности с.в. $\xi_k$ и $\xi_m$, $k\ne m$, следует
+$$
+\Var T_n=\sum\limits_{k=1}^{n} \Var \xi_k=
+\sum\limits_{k=1}^{n}\frac{k^2-1}{12}=-\frac{n}{12}+\frac{n(n+1)(2n+1)}{12\cdot 6}=\frac{n^3}{36}\bigl(1+O(\left.1\right/n)\bigr) . 
+$$
+
+\item 
+Для всякой сл.в. $X_k=\xi_k-{\mathbb E}\xi_k$ характеристическая функция имеет вид 
+$$
+\varphi_{X_k}(t)=1-\frac{t^2 \Var\xi_k}{2}+{\overline o}(t^2)=1-\frac{t^2(k^2-1)}{24}+{\overline o}(t^2) . 
+$$
+Для сл.в. $Y_n=\frac{T_n-{\mathbb E}T_n}{\sqrt{\Var T_n}}$, исходя из независимости сл.в. 
+$\xi_1$, $\ldots$, $\xi_n$ и свойств характеристических функций, получим 
+$$
+\varphi_{Y_n}(t)=\varphi_{X_1}\Bigl( \frac{t}{\sqrt{\Var T_n}} \Bigr)\cdot\ldots \cdot \varphi_{X_n}\Bigl( \frac{t}{\sqrt{\Var T_n}} \Bigr). 
+$$
+Поскольку 
+$$
+\varphi_{X_k}\Bigl( \frac{t}{\sqrt{\Var T_n}} \Bigr)=1-\frac{3(k^2-1) t^2}{2n^3}+{\overline o}\Bigl( \frac{1}{n^3} \Bigr)=
+\exp\Bigl( -\frac{3(k^2-1) t^2}{2n^3}+{\overline o}\Bigl( \frac{k^2}{n^3} \Bigr) \Bigr) , 
+$$
+находим 
+$$
+\varphi_{Y_n}(t)=\exp\Bigl( -\sum\limits_{k=1}^n \frac{3(k^2-1) t^2}{2n^3}+\sum\limits_{k=1}^n {\overline o}\Bigl( \frac{k^2}{n^3} \Bigr)
+\Bigr)=\exp\Bigl( -\frac{t^2}{2}+{\overline o}(1)\Bigr)\xrightarrow{n\to\infty} \exp\Bigl(-\frac{t^2}{2}\Bigr) , 
+$$
+откуда из предельных свойств для характеристических функций вытекает 
+$$
+Y_n=\frac{T_n-{\mathbb E}T_n}{\sqrt{\Var T_n}}\xrightarrow{d} N(0,1) , 
+$$
+что равносильно 
+$$\frac{T_n-\left.n^2\right/4}{\left.n^{3/2}\right/6}\xrightarrow{d} N(0,1) . 
+$$
+
+% Согласно ц.п.т. для с.в. $T_n$ имеем при $n\to\infty$ 
+% $$
+% \frac{T_n-{\mathbb E}T_n}{\sqrt{\Var T_n}}=\frac{T_n-\left.n^2(1+O(\left.1\right/n))\right/4}{\left.n^{3/2}(1+O(\left.1\right/n))\right/6}
+% \xrightarrow{d} N(0,1) , 
+% $$
+% откуда вытекает требуемое соотношение 
+% $$
+% \frac{T_n-\left.n^2\right/4}{\left.n^{3/2}\right/6}\xrightarrow{d} N(0,1) .  
+% $$
+\end{enumerate}
+\end{solution}

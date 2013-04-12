@@ -31,7 +31,7 @@
 q(C \vert \lambda) = \prod q_i(C_i \vert \lambda_i) 
 \]        
 
-Рассмотрим пример конкретный пример генератора.
+Рассмотрим конкретный пример генератора.
 
 \[
 \theta_d \sim Dirichlet(\alpha) \; d = \overline{1,m}
@@ -50,9 +50,12 @@ w_{di} \sim Categorical(\phi_{z_{di}}) \; i = \overline{1,n_d},
 
 $\alpha, \beta, m, n_d, K$ - известные параметры генератора.  
 
-Пусть 
+\noindent Найти параметры из набора $C$ предложенным выше способом.  
+
+\begin{ordre}
+ 
 \[
-q(\theta \phi, Z \vert \lambda) = \underset{d}{\prod}\underset{t}{\prod}\underset{i}{\prod} Dir(\theta_d | \lambda_{d}) Dir(\phi_t | \eta_{t}) Cat(z_{di} | \lambda_{di})
+q(\theta, \phi, Z \vert \lambda) = \underset{d}{\prod}\underset{t}{\prod}\underset{i}{\prod} Dir(\theta_d | \lambda_{d}) Dir(\phi_t | \eta_{t}) Cat(z_{di} | \lambda_{di})
 \]
 
 Требуется найти конечный вид системы уравнений 
@@ -62,6 +65,15 @@ q(\theta \phi, Z \vert \lambda) = \underset{d}{\prod}\underset{t}{\prod}\underse
 \]  
 
 для данного генератора.
+
+\end{ordre}
+
+\begin{remark}
+ Приведенный в данной задаче генератор используется в качестве модели для автоматического выявления  тем в наборе документов (или сортировки документов по темам и разделам). При этом переменные генератора будут иметь следующую интерпретацию: $\theta_d$ - пропорции тем в документе с номером d, 
+$\phi_t$ - пропорции слов в теме t,
+$z_{di}$ - тема i-го по порядку слова в документе d, 
+$w_{di}$ - значение i-го по порядку слова в документе d.
+\end{remark}
 
 \end{problem}
 

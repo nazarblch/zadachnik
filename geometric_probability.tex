@@ -28,3 +28,50 @@ P\{ \frac{\xi_1}{\xi_2} < x \} = \underset{t}{\int} P\{\xi_1 < xt \} f_{\xi_2}(t
 \] 
 \end{ordre}
 \end{problem}
+
+\begin{problem}
+Найдите вероятность того, что пара случайно выбранных из $E^n=\{ 0,1\}^n$ векторов является ортогональной 
+\begin{enumerate}
+\item[а)] над полем $F_2=\{ 0,1\}$; 
+
+\item[б)] над полем действительных чисел. 
+\end{enumerate}
+\end{problem}
+
+\begin{solution}
+\begin{enumerate}
+\item[а)]
+Пусть 
+$$
+\xi_{x,y}=\begin{cases}
+1, &\text{ если } (x,y)=0,\\
+0, &\text{ если } (x,y)=1.
+\end{cases}
+$$
+Для искомой вероятности тогда имеем 
+$$
+P=\frac{1}{2^n\cdot 2^n}\sum\limits_{x,y}\xi_{x,y}=\frac{1}{2^{2n}} \sum\limits_{x}\sum\limits_{y}\xi_{x,y} . 
+$$
+Поскольку при $x\ne 0$ с.в. 
+$$
+\xi_{x,y}=1+x_1 y_1+\ldots +x_n y_n 
+$$
+является невырожденной линейной булевой функцией переменной $y\in E^n$, внутренняя сумма $\sum\limits_{y}\xi_{x,y}$ 
+равна числу нулей функции $\xi_{x,y}$, т.е. равна $2^{n-1}$. При $x=0$, очевидно, $\sum\limits_{y}\xi_{x,y}=2^n$. Отсюда 
+$$
+P=\frac{1}{2^{2n}}\Bigl(\sum\limits_{x\ne 0}2^{n-1}+2^n \Bigr)=\frac{(2^n -1)\cdot 2^{n-1}+2^n}{2^{2n}}=\frac{1}{2}+
+\frac{1}{2^{n+1}} . 
+$$
+
+\item[б)] Аналогично получим 
+$$
+P=\frac{1}{2^{2n}}\sum\limits_{x,y}\xi_{x,y}=\frac{1}{4^n}\sum\limits_{k=0}^{n} \sum\limits_{x:\, \| x\|=k} 
+\sum\limits_{y} \xi_{x,y}=
+$$
+$$
+=\frac{1}{4^n}\sum\limits_{k=0}^{n} {n\choose k}2^{n-k}=
+\frac{1}{4^n}\cdot\bigl( 1+2\bigr)^n=\Bigl(\frac{3}{4}\Bigr)^n . 
+$$
+
+\end{enumerate}
+\end{solution}
