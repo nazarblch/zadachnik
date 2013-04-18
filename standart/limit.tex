@@ -1,0 +1,76 @@
+\subsection{Сходимость случайных величин}
+
+Introduction: quelque phrases de limit tipes.
+
+\begin{problem}
+Докажите, что при $n\to\infty$ 
+$$
+X_n\xrightarrow{L_2} X \,\Rightarrow\, X_n\xrightarrow{L_1}X \, \Rightarrow\, X_n\xrightarrow{P}X 
+\, \Leftarrow\, X_n\xrightarrow{\text{ п.н. }}X , 
+$$
+$$
+X_n\xrightarrow{P}X \, \Rightarrow\, X_n\xrightarrow{d}X . 
+$$
+С помощью контрпримеров покажите, что никакие другие стрелки импликации в эту схему в общем случае добавить нельзя. 
+При каких дополнительных условиях можно утверждать, что 
+$$
+X_n\xrightarrow{\text{ п.н. }}X  \, \Rightarrow\, X_n\xrightarrow{L_1}X ?
+$$
+Кроме того, показать, что 
+$$
+X_n\xrightarrow{P} X \; (n\to\infty) \,\Leftrightarrow\, \rho_P(X_n,X)={\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)
+\xrightarrow{n\to\infty} 0 . 
+$$
+Также показать, что 
+$$
+X_n \xrightarrow{d}c\quad \Rightarrow \quad X_n \xrightarrow{P}c, \text{ где } c=\const \text{ (не с.в.) }
+$$
+\end{problem}
+
+\begin{ordre}
+$ $
+\begin{enumerate}
+
+\item Из сходимости по распределению не следует сходимость по вероятности, а также сходимость в $L_1$, $L_2$ и почти наверное. Проанализируйте следующий контр пример.  
+
+\[
+X,Y,X,Y,\ldots
+\]
+
+ где  случайные величины $X(\omega)=\omega$ и $Y(\omega)=1-\omega$ имеют одну и ту же функцию распределения 
+$$
+F_X(x)=F_Y(x)=x\cdot {\mathbb I}_{\{ x\in[0,1]\}} . 
+$$
+
+\item Из сходимости по вероятности не следует сходимость почти наверное. Проанализируйте в качестве контр примера серию бегущих импульсов.
+ 
+$$
+X_1={\mathbb I}_{[0,1/2]},\, X_2={\mathbb I}_{[1/2,1]},\, X_3={\mathbb I}_{[0,1/4]},\, X_4={\mathbb I}_{[1/4,1/2]}, \ldots, 
+$$
+
+\item Выполнена импликация 
+$$
+X_n\xrightarrow{\text{ п.н. }}X  \, \Rightarrow\, X_n\xrightarrow{L_1}X , 
+$$
+т.е. возможен предельный переход под знаком математического ожидания, если семейство с.в. $\{ X_n\}$ является равномерно интегрируемым: 
+$$
+\sup\limits_n {\mathbb E}\bigl[ |X_n|\cdot {\mathbb I}_{\{ |X_n|>c\}} \bigr]\xrightarrow{c\to +\infty}0 . 
+$$
+
+\item 
+
+
+$\frac{|X_n-X|}{1+|X_n-X|}<1$, $\frac{|X_n-X|}{1+|X_n-X|}\leqslant |X_n-X|$. 
+
+
+\begin{multline*}
+{\mathbb E}\Bigl( \frac{|X_n-X|}{1+|X_n-X|}\Bigr)=\int\limits_{|X_n-X|\leqslant\varepsilon} 
+\frac{|X_n(\omega)-X(\omega)|}{1+|X_n(\omega)-X(\omega)|}\, P(d\omega)+\\
++\int\limits_{|X_n-X|>\varepsilon}
+\frac{|X_n(\omega)-X(\omega)|}{1+|X_n(\omega)-X(\omega)|}\, P(d\omega)
+\leqslant \varepsilon+{\mathbb P}(|X_n-X|>\varepsilon) . 
+\end{multline*}
+
+\end{enumerate}
+
+\end{ordre}
