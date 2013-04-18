@@ -68,7 +68,7 @@ $KL(\mathbb{P}, \mathbb{G}) = \int \log \frac{d\mathbb{P}}{d\mathbb{G}}(y) d\mat
 
 \begin{problem} Теорема Бернштейна-фон-Мизеса.\\
 Пусть $\mathbb{Y} = (Y_1, ..., Y_n)$ - независимые в совокупности, одинаково распределенные случаные величины, подчиняющиеся закону $\mathbb{P} \in (Be(p), p \in (0, 1))$, причем параметр $p$ так же является случайно величиной. $p \backsim Uniform(0,1)$. Доказать, что апостериорное распределение параметра $p$ ассимптотически нормальное:\\
-$(p|\mathbb{Y}) \rightarrow N(\tilde{p}, \frac{1}{n}I_{p^*}^{-1})$, где $p^* \in (0, 1)$ - истиное значение параметра, $I_{p^*}$ - информационная матрица Фишера.
+$(p|\mathbb{Y}) \rightarrow N(\tilde{p}, \frac{1}{n}I_{p^*}^{-1})$, где $p^* \in (0, 1)$ - истиное значение параметра, $I_{p^*}$ - информационная матрица Фишера, $\tilde{p}$ - средневыборочная оценка.
 \begin{ordre}
 \end{ordre}
 \end{problem}
@@ -77,8 +77,8 @@ $(p|\mathbb{Y}) \rightarrow N(\tilde{p}, \frac{1}{n}I_{p^*}^{-1})$, где $p^* 
 Рассмотрим следующую последовательность экспериментов:
 $\{Y_1^1\}$; $\{Y_2^1, Y_2^2\}$; ...;$\{Y_n^1,..., Y_n^n\}$, $\forall k: \{Y_k^1,...,Y_k^k\}, Y_k^j ~ Po(\frac{\lambda}{k})$ независимые в совокупности одинаково распределенные случайные величины. Параметр $\lambda \in (\theta ~ Uniform(0, 1))$. Доказать, что:
 \begin{enumerate}
-\item апостериорное распределение параметра $(\theta|\mathbb{Y}) \not\rightarrow^{w} N(\tilde{\theta},\frac{1}{n}I_{\frac{\lambda}{n}}^{-1} )$,
-\item $n(\theta|\mathbb{Y} \rightarrow Po(\lambda))$.
+\item апостериорное распределение параметра $(\theta|\mathbb{Y}) \not\rightarrow^{w} N(\tilde{\theta},\frac{1}{n}I_{\frac{\lambda}{n}}^{-1} )$, $\tilde{\theta}$ - средневыборочная оценка,
+\item $n(\theta|\mathbb{Y}) \rightarrow Po(\lambda)$.
 \end{enumerate}
 \end{problem}
 \begin{remark} Теорема БфМ 
