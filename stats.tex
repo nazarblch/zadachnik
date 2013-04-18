@@ -1,1 +1,86 @@
-\section{Три кота математической статистики}
+\section{Три крота математической статистики}
+
+\subsection{Основные определения}
+Общей задачей математической статистики является определение неизвестного (истинного) вероятностного закона  $\mathbb{P}$, по которому распределены исследуемые данные $\mathbb{Y} = (Y_1, ..., Y_n)$. Классическим является \textbf{Параметерический подход (PA)}:
+предполагается, что истинное распределение принадлежит некоторому параметрическому семейству:\\
+ $\mathbb{P} \in (\mathbb{P}_{\theta}) = (\mathbb{P}_{\theta}, \theta \in \Theta \in \mathbb{R}^p)$. Другими словами, $\exists \theta^* \in \Theta$, такая что $\mathbb{P}_{\theta^*} \equiv \mathbb{P}$.\\
+ Говорят, что \textbf{параметрическое предположение неверно (PA is Probably Wrong)}, если истинное распределение не лежит в семействе:  $\mathbb{P} \not\in (\mathbb{P}_{\theta})$.\\
+\\
+При парамтерическом подходе, одним из возможных способов восстановления $\mathbb{P}$ (что эквивалентно определению $\theta^*$) по $\mathbb{Y}$ является метод максимального правдоподобия.
+
+\begin{definition}\textbf{Метод максимального правдоподобия}\\
+Напомним, что \textbf{плотностью распределения} называется величина $p(y) = \frac{d\mathbb{P}}{d\mathbb{\mu}}(y)$. \textbf{\textit{Надо ли писать о теореме радона никодима???}}
+Если \textit{PA} выполнено, то оценкой максимума правдоподобия $\tilde{\theta}$ называется:
+$\tilde{\theta} \triangleq arg\max_{\theta \in \Theta} L(\theta)$, где $L(\theta, \mathbb{Y}) = -\log \frac{dP_{\theta}}{d\mu}(\mathbb{Y})$ - функция правдоподобия. Для краткости принято обозначать $L(\theta, \mathbb{Y}) = L(\theta)$\\
+\end{definition}
+
+Если параметрическое предположение неверно (модель миспецифицирована или, что то же самое, \textit{PA is PW}), то определим\\
+$\theta^* = arg\max_{\theta \in \Theta} \mathbb{E}_{\mathbb{P}} L(\theta)$, тогда $\mathbb{P}_{\theta^*} \in (\mathbb{P}_{\theta}, \theta \in \Theta \in \mathbb{R}^p) $ наилучшая аппроксимация истиного распределения $\mathbb{P}$ распределением из семейства $(P_{\theta})$.
+\begin{example} Пример функции правдоподобия для нормального распределеия.
+\end{example}
+
+\begin{definition} \textbf{Расстояние Кульбака-Лейблера}\\
+Информационное расстояние между двумя вероятностынми мерами.\\
+$KL(\mathbb{P}, \mathbb{G}) = \int \log \frac{d\mathbb{P}}{d\mathbb{G}}(y) d\mathbb{P(y)} = \int \log \frac{p(y)}{g(y)} p(y)d\mu (y)$. Последнее равенство справедливо в случае существования функций плотности распределений $\mathbb{P}$ и $\mathbb{G}$. 
+\end{definition}
+
+\begin{definition} Лог-плотностью распределения называется величина $l(y, \theta) = \log p(y, \theta)$.
+\end{definition}
+
+\begin{definition} \textbf{Информационная матрица Фишера}
+Предполагая, что параметрическое семесйство $(P_{\theta})$ непрерывно дифференцируемо по $\theta$, можно определить величину $I(\theta) = \mathbb{E}_{\theta}|l'(Y, \theta)|^2$, где $Y \backsim \mathbb{P}_{\theta}$.
+\end{definition}
+
+\subsection{Задачи}
+\begin{problem} Найти оценку максимума правдоподобия и вычислить информацию Фишера для семейства $(P_{\theta}) = (N(\theta, \sigma^2), \theta \in \Theta \subseteq \mathbb{R})$.
+\end{problem}
+
+\begin{problem}
+Доказать, что оценка параметра $\theta^*$ в мисспецифицированной модели: $\theta^* = arg\max_{\theta \in \Theta} \mathbb{E}_{\mathbb{P} }L(\theta)$, эквивалентна минимизации расстояния Кульбака-Лейблера $\theta^* = arg\min_{\theta \in \Theta} KL(\mathbb{P}, \mathbb{P_{\theta}})$.
+\begin{ordre}
+
+\end{ordre}
+
+\end{problem}
+
+\begin{problem} Мисспецификация.
+Рассмотрим модель нормальной линейной регресии. $\mathbb{Y} = (Y_1,..., Y_n)^T$ - наблюдаемые данные, $X = (X_1,..., X_n)^T$ - вектор регрессоров. $\forall i \in \{1,..,n\}: ~ Y_i = f(X_i) + \epsilon_i$, $f(\centerdot)$ - неслучайная функция, $\{\epsilon_i\}_{i = 1}^n$ - независимые в совокупности, одинаково распределенные случайные величины. \\
+\textit{PA:} $f(\centerdot) \in (f(\centerdot, \theta), \theta \in \mathbb{R}^p )$ и ошибки распределены нормально: $\epsilon_i \backsim N(0, \sigma^2)$.
+Доказать, что:
+\begin{enumerate}
+\item Предполагая, что \textit{PA is PW}: $\epsilon_i \not\backsim N(0, \sigma^2)$, но $\mathbb{E}\epsilon_i = 0$, $Var(\epsilon_i) = \sigma^2$, то для оценки $\theta^*$ справделиво равенство $\theta^* =arg\min_{\theta \in \mathbb{R}^p} ||f(\centerdot) - f(\centerdot, \theta)||_2$.\\
+\item \textit{Медианная регрессия}. Предполагая, что \textit{PA is PW}: ошибки распределены по закону Лапласа: $\forall i: \epsilon_i \backsim p(y) = \frac{1}{2} e^{-|y|}$, то для оценки $\theta^*$ справделиво равенство $\theta^* = arg\min_{\theta \in \mathbb{R}^p} ||f(\centerdot) - f(\centerdot, \theta)||_1$. \\
+\end{enumerate}
+\end{problem}
+
+\begin{problem} \textit{Феномен Вилкса.}\\
+Данные $\mathbb{Y} = (Y_1,..., Y_n)^T$ имеют вид:\\
+(\textit{PA}) $Y_i = \theta^* + \epsilon_i$, $\theta^* \in \Theta$ - неизвестный (истиный) параметр, $\{\epsilon_i\}_{i=1}^n$ - независимые в совокупности, одинаково распределенные случайные вечличины, причем $\epsilon_i \backsim N(0, \sigma^2)$.\\
+Эксцессом $L(\tilde{\theta}, \theta^*)$ функции правдоподобия называется случайная величина $L(\tilde{\theta}, \theta^*) = arg\max_{\theta \in \Theta}L(\theta) - L(\theta^*)$.\\
+Показать, что если \textit{PA} верно, то $2L(\tilde{\theta}, \theta^*) \backsim \chi_n^2$, $\chi_n^2$ - распределени хи-квадрат. 
+\end{problem}
+
+\begin{problem} \textit{Феномен Вилкса в случае ошибочности предположения о линейности.}\\
+Показать, что даже если в предыдущей задаче предположение о линейности неверно: $\mathbb{E}(Y_i) = f \not= \theta^*$, то наилучшая аппроксимация $\theta^* = arg\max_{\theta \in \Theta} \mathbb{E}_{\mathbb{P} }L(\theta)$ имеет вид $\theta^* = f$ и феномен Вилкса остается справедлив: $2L(\tilde{\theta}, \theta^*) \backsim \chi_n^2$.
+\end{problem}
+\begin{remark} Написать о феномене Вилкса + его связь с квадратичностью лайклихуда. Пару слов о 
+\end{remark}
+
+\begin{problem} Теорема Бернштейна-фон-Мизеса.\\
+Пусть $\mathbb{Y} = (Y_1, ..., Y_n)$ - независимые в совокупности, одинаково распределенные случаные величины, подчиняющиеся закону $\mathbb{P} \in (Be(p), p \in (0, 1))$, причем параметр $p$ так же является случайно величиной. $p \backsim Uniform(0,1)$. Доказать, что апостериорное распределение параметра $p$ ассимптотически нормальное:\\
+$(p|\mathbb{Y}) \rightarrow N(\tilde{p}, \frac{1}{n}I_{p^*}^{-1})$, где $p^* \in (0, 1)$ - истиное значение параметра, $I_{p^*}$ - информационная матрица Фишера.
+\begin{ordre}
+\end{ordre}
+\end{problem}
+
+\begin{problem}
+Рассмотрим следующую последовательность экспериментов:
+$\{Y_1^1\}$; $\{Y_2^1, Y_2^2\}$; ...;$\{Y_n^1,..., Y_n^n\}$, $\forall k: \{Y_k^1,...,Y_k^k\}, Y_k^j ~ Po(\frac{\lambda}{k})$ независимые в совокупности одинаково распределенные случайные величины. Параметр $\lambda \in (\theta ~ Uniform(0, 1))$. Доказать, что:
+\begin{enumerate}
+\item апостериорное распределение параметра $(\theta|\mathbb{Y}) \not\rightarrow^{w} N(\tilde{\theta},\frac{1}{n}I_{\frac{\lambda}{n}}^{-1} )$,
+\item $n(\theta|\mathbb{Y} \rightarrow Po(\lambda))$.
+\end{enumerate}
+\end{problem}
+\begin{remark} Теорема БфМ 
+\end{remark}
+\end{document}

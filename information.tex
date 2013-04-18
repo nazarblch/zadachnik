@@ -3,6 +3,125 @@
 \begin{problem}
 
 Пусть казино делает $n$ бросаний, используя распределение вероятностей на бинарных словах длины $n$ $p\left(x\right)$, где $x=\left\{0,1\right\}^{n} $, известное игроку. При этом казино производит выплаты так, как если бы оно использовало распределении $q\left(x\right)$ (то есть выигранная ставка на 0, после выпадения $x$ исходов увеличивается в $\frac{q\left(x\right)}{q\left(x0\right)} $ раз, выигранная ставка на 1, после выпадения $x$ исходов увеличивается в $\frac{q\left(x\right)}{q\left(x1\right)} $ раз, см. семинар). Докажите, что у игрока есть стратегия, логарифм значения капитала которой равен расстоянию Кульбака-Лейблера $\sum _{x\in \left\{0,1\right\}^{n} }p\left(x\right)\log \frac{p\left(x\right)}{q\left(x\right)}  $ между распределениями $p$ и $q$.
+\end{problem}
 
-что-то
+
+\subsection{Основные определения}
+Алфавитом $A = \{a_1, ..., a_{|A|}\}$ будем называть конечное множество мощности A;\\
+$n$-буквенную последовтаельность $X_1, ..., X_n$ из алфавита $A$ будем обозначать $x_1^n$ или $\textbf{x}$
+
+
+\begin{definition} 
+\textit{Энтропией} $H(\mathbb{P})$ вероятностного распределения $\mathbb{P} = \{\mathbb{P}(a), a \in A\}$ называется величина:
+\begin{center}
+$H(\mathbb{P}) = - \sum_{a \in A} \mathbb{P}(a)\log \mathbb{P}(a)$ (логарифм по основанию 2)
+\end{center}
+\end{definition}
+
+\begin{definition}
+\textit{Относительной энтропией} распределений $\mathbb{P}$ и $\mathbb{Q}$ на множестве $A$ (или расстоянием Кульбака-Лейблера между распределениями $\mathbb{P}$ и $\mathbb{Q}$) называется величина
+\begin{center}
+$D(\mathbb{P}||\mathbb{Q}) = \sum_{a \in A} \mathbb{P}(a) \log \frac{\mathbb{P}(a)}{\mathbb{Q}(a)}$.
+\end{center}
+
+\end{definition}
+
+
+\begin{definition} 
+\textit{Эмпирическим распределением} или типом $\hat{\mathbb{P}} = \hat{\mathbb{P}}_{x_1^n}$ слова $x_1^n\in A^n$ называется распределение вида:
+\begin{center}
+$\hat{\mathbb{P}}(a) = \frac{|\{i : x_i = a\}| }{n}$
+\end{center}  
+\end{definition}
+
+\begin{definition} 
+Будем обозначать $\mathcal{P}_n$ множество эмпирических распределений, построенных по всевозможным цепочкам длины $n$.
+\end{definition}
+
+\begin{example}
+$A = \{0, 1\}$, тогда
+\begin{center}
+$\mathcal{P}_n = \{(\mathbb{P}(0), \mathbb{P}(1)) : (\frac{0}{n} , \frac{n}{n}), (\frac{1}{n}, \frac{n-1}{n}), ..., (\frac{n}{n}, \frac{0}{n})\}$
+\end{center}
+\end{example}
+
+\begin{definition} 
+Если $\mathbb{P} \in \mathcal{P}_n$, то множество всех слов длины $n$, таких что:
+\begin{center}
+$T(\mathbb{P}) = \{x_1^n \in A^n: \mathbb{P}_{x_1^n} = \mathbb{P}\}$
+\end{center}
+будем называть классом эквивалентности.
+\end{definition}
+
+\subsection{Задачи}
+
+\begin{problem}
+Доказать, что $|\mathcal{P}_n| \leq (n+1)^{|A|}$.
+\textit{Замечание.} Этот несложный результат указывает на то, что $\forall n \in \mathbb{N}$ количество эмпирических распределений, полученных при помощи оценки частотности $\mathcal{P}_n$ полиномиально. 
+\end{problem}
+
+\begin{problem}
+Пусть $\mathbb{Q}^n(x_1^n) = \prod_{i = 1}^{n} \mathbb{Q}(x_i)$. Показать, что если последовательность независимых одинаково распределенных cлучайных величин $\{X_i\}_{i = 1}^n$, $X_i \sim \mathbb{Q}$, то вероятность появления слова $x_1^n$ в такой модели зависит только от его типа и определяется как
+\begin{center}
+$\mathbb{Q}^n(x_1^n) = 2^{-nH(\mathbb{P}_{x_1^n}) + nD(\mathbb{P}_{x_1^n}||\mathbb{Q})}$.
+\end{center}   
+\end{problem}
+
+\begin{problem}
+Показать, что $\forall \mathbb{P} \in \mathcal{P}_n$ и для любого произвольного распрделения $\mathbb{Q}$ на множестве $A$, вероятность того, что модель $\mathbb{Q}^n$ сгенерирует слово из множества $T(\mathbb{P})$ удовлетворяет следующему неравенству:
+\begin{center}
+$\frac{1}{(n+1)^{|A|}} 2^{-nD(\mathbb{P}||\mathbb{Q})} \leq \mathbb{Q}^n(T(\mathbb{P})) \leq 2^{-nD(\mathbb{P}||\mathbb{Q})}$
+\end{center}
+\emph{Указание}:
+\begin{enumerate}
+\item $\mathbb{Q}^n(T(\mathbb{P})) = \sum_{x \in T(\mathbb{P})} \mathbb{Q}^n(x)$
+\item воспользуйтесь результатом задачи 1.2 и неравенством \\
+$\frac{1}{(n+1)^{|A|}} 2^{nH(\mathbb{P})} \leq |T(\mathbb{P})| \leq 2^{nH(\mathbb{P})} $
+\end{enumerate}
+\textit{Замечание}. Неравенство (*) говорит о том, что $\forall n \in \mathbb{N}$ число слов длины $n$, по котороым можно построить эмпирическое распределение $\mathbb{P}$ ($|T(\mathbb{P})|$) экспонециально.
+\end{problem}
+
+\begin{problem}
+\textit{Закон больших чисел}
+$\forall \mathbb{P} \in \mathcal{P}_n $, $\forall \mathbb{Q}$ на $A$, $\forall \epsilon > 0$ типичным $T_{\mathbb{Q}}^{\epsilon}$ множеством слов для распределения $\mathbb{Q}^n$ будем называть
+\begin{center}
+$T_{\mathbb{Q}}^{\epsilon} = \{x_1^n: D(\mathbb{P}_{x_1^n}|| \mathbb{Q}) \leq \epsilon \}$.
+\end{center}
+Пусть $X_1, ..., X_n$ независимые одинаково распределенные с.в. ($X_i \sim \mathbb{Q}$). Показать, что:
+\begin{enumerate}
+\item 
+\begin{center}
+$Pr\{D(\mathbb{P}_{x_1^n} || \mathbb{Q}) \geq \epsilon \} \leq 2^{-n(\epsilon - |A|\frac{\log(n+1)}{n})}$
+\end{center}
+\textit{Указание}:
+Пользуясь результатами задач 1.1 и 1.3 оценить вероятность того, что последовательность $x_1^n$ - нетипична: $Pr\{x_1^n \not\in T_{\mathbb{Q}}^{\epsilon}\} = 1 - \mathbb{Q}^n(T_{\mathbb{Q}}^{\epsilon})$;\\
+для этого представить $1 - \mathbb{Q}^n(T_{\mathbb{Q}}^{\epsilon}) = \sum_{\mathbb{P}: D(\mathbb{P}||\mathbb{Q}) > \epsilon}{ \mathbb{Q}^n(T(\mathbb{P}))}$ 
+\item $D(\mathbb{P}_{x_1^n}||\mathbb{Q})\rightarrow^{a.s.}0$\\
+\textit{Указание}: воспользуйтесь первой леммой Борелля-Кантелли.\\
+Пусть $\{A_n, n \geq \}$ - последовательность событий в вероятностном пространстве. $A = \cup_{k = 1}^{\infty} \cap_{n = k}^{\infty} A_n$ - событие, говорящее о том, что из серии $\{A_n, n \geq \}$ реализовалось бесконечно много событий.
+Если $\sum_{n=1}^{\infty}\mathbb{P}(A_n) < \infty$, то $\mathbb{P}(A) = 0$
+\end{enumerate}
+\end{problem}
+
+\begin{problem} \textit{Теорема Санова или неравенство больших уклонений.} Сделать указанием.\\
+Пусть $X_1, ..., X_n$ независимые одинаково распределенные с.в. ($X_i \sim \mathbb{Q}$). $E$ - множество вероятностных распределений. Доказать, что
+\begin{equation}
+\mathbb{Q}^n(E) = \mathbb{Q}^n(E\cap \mathcal{P}_n) \leq (n+1)^{|A|}2^{-nD(\mathbb{P}^*||\mathbb{Q})},
+\end{equation}
+где $\mathbb{Q}^n(E) = \mathbb{Q}^n(E\cap \mathcal{P}_n)$ $\mathbb{P}^* = arg\min_{\mathbb{P}\in E}D(\mathbb{P}||\mathbb{Q})$ - ближайшее к $\mathbb{Q}$ в смысле расстояния Кульбака-Лейблера  распрделение из семейства $E$.\\
+Если $E$ - замкнуто, то
+\begin{equation}
+\frac{1}{n} \log \mathbb{Q}^n(E) \rightarrow D(\mathbb{P}^*|| \mathbb{Q})
+\end{equation}
+\end{problem}
+
+\begin{problem} \textit{Неравенство больших уклонений}
+Рассмотрим последовательность незовисимых одинаково распределенных случайных величин $X_1, ..., X_n$, $X_i~Be(q)$. Доказать, что $-\frac{1}{n}\log \mathbb{P}(\frac{1}{n}\sum X_i \geq p) \rightarrow p\log \frac{p}{q} + (1-p)\log \frac{1-p}{1-q} = D((p, 1-p)||(q, 1-q))$.
+\begin{ordre}
+\end{ordre}
+\end{problem}
+
+\begin{problem} 
+\textit{Расстоянием по вариации} между двумя распределениями называется $||\mathbb{P}_1 - \mathbb{P}_2||_1 = \sum_{a \in A} |\mathbb{P}_1(a) - \mathbb{P}_2(a)|$. Доказать, что между ним и расстоянием Кульбака-Лейблера справедливо следующее соотношение:\\
+$D(\mathbb{P}_1||\mathbb{P}_2) \geq \frac{1}{2\ln2} ||\mathbb{P}_1 - \mathbb{P}_2||_1^2$
 \end{problem}
