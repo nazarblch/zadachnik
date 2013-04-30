@@ -21,14 +21,14 @@ $\theta^* = arg\max_{\theta \in \Theta} \mathbb{E}_{\mathbb{P}} L(\theta)$, то
 
 \begin{definition} \textbf{Расстояние Кульбака-Лейблера}\\
 Информационное расстояние между двумя вероятностынми мерами.\\
-$KL(\mathbb{P}, \mathbb{G}) = \int \log \frac{d\mathbb{P}}{d\mathbb{G}}(y) d\mathbb{P(y)} = \int \log \frac{p(y)}{g(y)} p(y)d\mu (y)$. Последнее равенство справедливо в случае существования функций плотности распределений $\mathbb{P}$ и $\mathbb{G}$. 
+$KL(\mathbb{P}, \mathbb{G}) = \int \log \frac{d\mathbb{P}}{d\mathbb{G}}(y) d\mathbb{P(y)} = \int \log \frac{p(y)}{g(y)} p(y)d \mu (y)$. Последнее равенство справедливо в случае существования функций плотности распределений $\mathbb{P}$ и $\mathbb{G}$. 
 \end{definition}
 
 \begin{definition} Лог-плотностью распределения называется величина $l(y, \theta) = \log p(y, \theta)$.
 \end{definition}
 
 \begin{definition} \textbf{Информационная матрица Фишера}
-Предполагая, что параметрическое семесйство $(P_{\theta})$ непрерывно дифференцируемо по $\theta$, можно определить величину $I(\theta) = \mathbb{E}_{\theta}|l'(Y, \theta)|^2$, где $Y \backsim \mathbb{P}_{\theta}$.
+Предполагая, что параметрическое семесйство $(P_{\theta})$ непрерывно дифференцируемо по $\theta$, можно определить величину $I(\theta) = \mathbb{E}_{\theta}|l'(Y, \theta)|^2$, где $Y \backsim \mathbb{P}_{\theta}$. \textbf{Нужно ли говорить о многомерном параметре $\theta$???}
 \end{definition}
 
 \subsection{Задачи}
@@ -44,7 +44,7 @@ $KL(\mathbb{P}, \mathbb{G}) = \int \log \frac{d\mathbb{P}}{d\mathbb{G}}(y) d\mat
 \end{problem}
 
 \begin{problem} Мисспецификация.
-Рассмотрим модель нормальной линейной регресии. $\mathbb{Y} = (Y_1,..., Y_n)^T$ - наблюдаемые данные, $X = (X_1,..., X_n)^T$ - вектор регрессоров. $\forall i \in \{1,..,n\}: ~ Y_i = f(X_i) + \epsilon_i$, $f(\centerdot)$ - неслучайная функция, $\{\epsilon_i\}_{i = 1}^n$ - независимые в совокупности, одинаково распределенные случайные величины. \\
+Рассмотрим модель нормальной линейной регресии. $\mathbb{Y} = (Y_1,..., Y_n)^T$ - наблюдаемые данные, $X = (X_1,..., X_n)^T$ - вектор регрессоров. $\forall i \in \{1,..,n\}: \backsim Y_i = f(X_i) + \epsilon_i$, $f(\centerdot)$ - неслучайная функция, $\{\epsilon_i\}_{i = 1}^n$ - независимые в совокупности, одинаково распределенные случайные величины. \\
 \textit{PA:} $f(\centerdot) \in (f(\centerdot, \theta), \theta \in \mathbb{R}^p )$ и ошибки распределены нормально: $\epsilon_i \backsim N(0, \sigma^2)$.
 Доказать, что:
 \begin{enumerate}
@@ -53,9 +53,18 @@ $KL(\mathbb{P}, \mathbb{G}) = \int \log \frac{d\mathbb{P}}{d\mathbb{G}}(y) d\mat
 \end{enumerate}
 \end{problem}
 
+\begin{problem} \textit{Теорема Фишера}\\
+Данные $\mathbb{Y} = (Y_1,..., Y_n)^T$ имеют вид:\\
+(\textit{PA}) $Y_i = \theta^* + \epsilon_i$, $\theta^* \in \Theta \subset \mathbb{R}$ - неизвестный (истиный) параметр, $\{\epsilon_i\}_{i=1}^n$ - независимые в совокупности, одинаково распределенные случайные вечличины, причем $\epsilon_i \backsim N(0, \sigma^2)$.\\
+Показать, что случайная величина $\frac{\sigma}{\sqrt{n}}L'(\theta^*) \backsim N(0, 1)$.
+\end{problem}
+
+\begin{problem} Задача Кирилла.
+\end{problem}
+
 \begin{problem} \textit{Феномен Вилкса.}\\
 Данные $\mathbb{Y} = (Y_1,..., Y_n)^T$ имеют вид:\\
-(\textit{PA}) $Y_i = \theta^* + \epsilon_i$, $\theta^* \in \Theta$ - неизвестный (истиный) параметр, $\{\epsilon_i\}_{i=1}^n$ - независимые в совокупности, одинаково распределенные случайные вечличины, причем $\epsilon_i \backsim N(0, \sigma^2)$.\\
+(\textit{PA}) $Y_i = \theta^* + \epsilon_i$, $\theta^* \in \Theta \subset \mathbb{R}$ - неизвестный (истиный) параметр, $\{\epsilon_i\}_{i=1}^n$ - независимые в совокупности, одинаково распределенные случайные вечличины, причем $\epsilon_i \backsim N(0, \sigma^2)$.\\
 Эксцессом $L(\tilde{\theta}, \theta^*)$ функции правдоподобия называется случайная величина $L(\tilde{\theta}, \theta^*) = arg\max_{\theta \in \Theta}L(\theta) - L(\theta^*)$.\\
 Показать, что если \textit{PA} верно, то $2L(\tilde{\theta}, \theta^*) \backsim \chi_n^2$, $\chi_n^2$ - распределени хи-квадрат. 
 \end{problem}
@@ -75,7 +84,7 @@ $(p|\mathbb{Y}) \rightarrow N(\tilde{p}, \frac{1}{n}I_{p^*}^{-1})$, где $p^* 
 
 \begin{problem}
 Рассмотрим следующую последовательность экспериментов:
-$\{Y_1^1\}$; $\{Y_2^1, Y_2^2\}$; ...;$\{Y_n^1,..., Y_n^n\}$, $\forall k: \{Y_k^1,...,Y_k^k\}, Y_k^j ~ Po(\frac{\lambda}{k})$ независимые в совокупности одинаково распределенные случайные величины. Параметр $\lambda \in (\theta ~ Uniform(0, 1))$. Доказать, что:
+$\{Y_1^1\}$; $\{Y_2^1, Y_2^2\}$; ...;$\{Y_n^1,..., Y_n^n\}$, $\forall k: \{Y_k^1,...,Y_k^k\}, Y_k^j \backsim Po(\frac{\lambda}{k})$ независимые в совокупности одинаково распределенные случайные величины. Параметр $\lambda \in (\theta \backsim Uniform(0, 1))$. Доказать, что:
 \begin{enumerate}
 \item апостериорное распределение параметра $(\theta|\mathbb{Y}) \not\rightarrow^{w} N(\tilde{\theta},\frac{1}{n}I_{\frac{\lambda}{n}}^{-1} )$, $\tilde{\theta}$ - средневыборочная оценка,
 \item $n(\theta|\mathbb{Y}) \rightarrow Po(\lambda)$.
@@ -83,4 +92,6 @@ $\{Y_1^1\}$; $\{Y_2^1, Y_2^2\}$; ...;$\{Y_n^1,..., Y_n^n\}$, $\forall k: \{Y_k^1
 \end{problem}
 \begin{remark} Теорема БфМ 
 \end{remark}
+
+
 \end{document}
