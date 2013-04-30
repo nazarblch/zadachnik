@@ -218,10 +218,82 @@ $a^{2^{k} t} \equiv -1\; mod\; N$.
 
 \end{problem}
 
+\begin{problem}
+\textbf{А)} Пусть имеется генератор случайных чисел, в 
+результате обращения к которому появляется 0 или 1 с одинаковой вероятностью 
+равной 1/2 (аналог подбрасывания симметричной монеты). Пусть задано 
+вещественное число $0\le p\le 1$. С помощью имеющегося генератора определить 
+генератор randp, в результате обращения к которому появляется 0 или 1 с 
+вероятностями $p$ и $1-p$ соответственно (незначительные отклонения 
+допустимы). Оцените сложность в среднем алгоритма получения одного 
+случайного числа с помощью randp (затраты определяются числом обращений к 
+изначально имеющемуся генератору). \textbf{Б)} Пусть имеется генератор 
+случайных чисел randp (описанный выше). Известно, что $p\ne 0,\quad p\ne 1$. 
+Как с помощью него сконструировать генератор, в результате обращения 
+которому появляется 0 или 1 с одинаковой вероятностью 1/2. \textbf{В)} Чему 
+равно математическое ожидание числа обращений к изначально имеющемуся 
+генератору случайных чисел при построении последовательности пар до 
+появления 0,1 или 1,0? Найти сложность в среднем алгоритма получения k 
+``равновероятных'' нулей и единиц с помощью сконструированного генератора 
+(затраты определяются количеством обращений к изначально имеющемуся 
+генератору). Можно ли указать значения $p$, для которых эта сложность имеет 
+минимальное и, соответственно, максимальное значение?
+\end{problem}
+
 
 
 
 \subsection{Кодирование}
+
+\begin{problem}
+Пусть буква $X$ --- дискретная с.в., принимающая значения из алфавита $(x_1,\ldots,x_m)$ с вероятностями $(p_1,\ldots,p_m)$. 
+Имеется случайный текст из $n$ букв $X$ (предполагается, что буквы в тексте независимы друг от друга). Общее количество таких 
+текстов $2^{n\log m}$. Поэтому можно закодировать все эти слова, используя $n\log m$ бит. Однако, используя то обстоятельство, что 
+$(p_1,\ldots,p_m)$ --- в общем случае неравномерное распределение, предложите лучший способ кодирования, основанный 
+на усиленном законе больших чисел.
+\end{problem}
+
+\begin{ordre}
+Пусть $\Omega=\{ \omega:\; \omega=(X_1,X_2,\ldots, X_n),\, X_i\in 1,2,\ldots,m\}$ --- пространство элементарных исходов. 
+Вероятность появления слова $\omega=(X_1,X_2,\ldots, X_n)$ равна $p(\omega)=p_{X_1}\cdot\ldots\cdot p_{X_n}$. По теореме Колмогорова об 
+у.з.б.ч. 
+$$
+-\frac{1}{n}\log p(\omega)=-\frac{1}{n}\sum\limits_{i=1}^{n}\log p_{X_i} \xrightarrow{\text{ п.н. }} 
+-{\mathbb E}p(\omega)=-\sum\limits_{i=1}^{m}p_i\log p_i=H(p) 
+$$
+В частности, $\frac{S_n}{n}\xrightarrow{P}H(p)$, где $S_n=-\log p(\omega)=-\sum\limits_{i=1}^{n}\log p_{X_i}$. Это можно записать в виде 
+
+$$
+{\mathbb P}\Bigl( \Bigl| \frac{S_n-nH(p)}{n}\Bigr|>\delta \Bigr)  \xrightarrow{n\to\infty} 0 
+$$
+\end{ordre}
+
+\begin{problem}[о шляпах Тода Эберта (1998) ]
+
+Трех игроков отводят в комнату, где на них надевают (случайно и независимо) белые и черные шляпы. Каждый видит 
+цвет других шляп и должен написать на бумажке одно из трех слов: <<белый>>, <<черный>>, <<пас>> 
+(не советуясь с другими и не показывая им свою бумажку). Команда выигрывает, если хотя бы один из игроков назвал правильный 
+цвет своей шляпы и ни один не назвал неправильного. Как им сговориться, чтобы увеличить шансы? 
+Решите эту же задачу, если игроков $n=2^m -1$ $( m\in {\mathbb N} )$. 
+\end{problem}
+
+\begin{ordre}
+Воспользуйтесь понятием кода Хемминга.
+\end{ordre}
+
+\begin{remark}
+Докажем для случая трех игроков, что стратегий лучше (вероятность выигрыша больше  $ \frac{3}{4}$) не бывает . 
+
+Единственная информация, которой владеет $i$-й игрок --- это цвета шляп двух других. Поэтому стратегия для $i$-го игрока должна зависеть 
+только от этих двух цветов. В каждом случае имется три варианта ответа для игрока: $0$, $1$ или <<пас>>, т.е. всего $3^{12}$ различных 
+стратегий. Поскольку есть $8$ вариантов расположения шляп на игроках, более выгодная стратегия должна обеспечивать выигрыш в $7$ вариантах. 
+Тогда один из игроков должен угадать свой цвет в $3$ ситуациях. Значит, имеются для него ответы $\alpha_{i_1 j_1}$, 
+$\alpha_{i_2 j_2}$, не являющиеся пасами. Но тогда в ситуациях $\overline{\alpha_{i_1 j_1}} i_1 j_1$ и 
+$\overline{\alpha_{i_2 j_2}} i_2 j_2$ он ошибется, что противоречит предположению о $7$ выигрышных ситуациях. 
+
+Таким образом, максимальная вероятность выигрыша равна $\frac{3}{4}$. 
+
+\end{remark}
 
 
 
@@ -286,6 +358,112 @@ $a^{2^{k} t} \equiv -1\; mod\; N$.
  
  \begin{problem} 
 Имеется неизвестное число от 1 до $n$ ($n\ge 2$). Разрешается задавать любые вопросы с ответами ДА/НЕТ. При ответе ДА мы платим 1 рубль, при ответе НЕТ -- 2 рубля. Сколько необходимо и достаточно заплатить для отгадывания числа?
+\end{problem}
+
+
+\begin{problem}[сублинейный приближенный вероятностный алгоритм для 
+матричных игр; Григориадис -- Хачиян, 1995]
+Рассматривается симметричная 
+антагонистическая игра двух лиц X и Y. Смешанные стратегии X и Y будем 
+обозначать соответственно $\vec {x}$ и $\vec {y}$. При этом $x_k $ - 
+вероятность того, что игрок X выберет стратегию с номером k, аналогично 
+определяется $y_k $. Таким образом, $\vec {x},\vec {y}\in S=\left\{ {\vec 
+{x}\in {\rm R}^n:\;\;\vec {e}^T\vec {x}=1,\;\vec {x}\ge \vec {0}} \right\}$, 
+где $\vec {e}=\left( {1,...,1} \right)^T$. Выигрыш игрока X: $V_X \left( 
+{\vec {x},\vec {y}} \right)=\vec {y}^TA\vec {x}$, а выигрыш игрока Y: $V_Y 
+\left( {\vec {x},\vec {y}} \right)=-\vec {y}^TA\vec {x}$ (игра 
+антагонистическая). Каждый игрок стремится максимизировать свой выигрыш, при 
+заданном ходе оппонента. Равновесием Нэша (в смешанных стратегиях) 
+называется такая пара стратегий $\left( {\vec {x}^\ast ,\;\vec {y}^\ast } 
+\right)$, что
+\[
+\vec {x}^\ast \in \mbox{Arg}\mathop {\max }\limits_{\vec {x}\in S} \vec 
+{y}^{\ast T} A\vec {x},
+\quad
+\vec {y}^\ast \in \mbox{Arg}\mathop {\min }\limits_{\vec {y}\in S} \vec 
+{y}^TA\vec {x}^\ast .
+\]
+Ценой игры называют $\mathop {\max }\limits_{\vec {x}\in S} \mathop {\min 
+}\limits_{\vec {y}\in S} \vec {y}^TA\vec {x}=\mathop {\min }\limits_{\vec 
+{y}\in S} \mathop {\max }\limits_{\vec {x}\in S} \vec {y}^TA\vec {x}=\vec 
+{y}^{\ast T}A\vec {x}^\ast $. Поскольку, по условию, игра также симметричная, 
+то $A=-A^T$ - матрица$n\times n$. С помощью стандартной редукции можно 
+свести к этому случаю общий случай произвольной матричной игры. В 
+рассматриваемом же случае цена игры (выигрыш игроков в положении равновесия 
+Нэша) есть 0, а множества оптимальных стратегий игроков совпадают. Требуется 
+найти с точностью $\varepsilon >0$ положение равновесия Нэша (оптимальную 
+стратегию), т.е. требуется найти такой вектор $\vec {x}$, что $A\vec {x}\le 
+\varepsilon \vec {e}$, $\vec {x}\in S$. Покажите, считая элементы матрицы 
+$A$ равномерно ограниченными, скажем, единицей, что приводимый ниже алгоритм 
+находит с вероятностью не меньшей $1 \mathord{\left/ {\vphantom {1 2}} 
+\right. \kern-\nulldelimiterspace} 2$ (вместо $1 \mathord{\left/ {\vphantom 
+{1 2}} \right. \kern-\nulldelimiterspace} 2$ можно взять любое положительное 
+число меньшее единицы) такой $\vec {x}$ за время ${\rm O}\left( {\varepsilon 
+^{-2}n\log ^2n} \right)$, т.е. в определенном смысле даже не вся матрица (из 
+$n^2$ элементов) просматривается. Отметим также, что в классе 
+детерминированных алгоритмов, время работы растет с ростом $n$ не медленнее 
+чем $\sim n^2$ (эта нижняя оценка получается из информационных соображений). 
+Другими словами, никакой детерминированный алгоритм не может также 
+асимптотически быстро находить приближенно равновесие Нэша. Точнее говоря, 
+описанный ниже вероятностный алгоритм дает почти квадратичное ускорение по 
+сравнению с детерминированными.
+
+\underline {\textbf{Алгоритм}}
+
+\begin{enumerate}
+\item \textbf{Инициализация:} $\vec {x}=\vec {U}=\vec {0}$, $\vec {p}={\vec {e}} \mathord{\left/ {\vphantom {{\vec {e}} n}} \right. \kern-\nulldelimiterspace} n$, $t=0$.
+\item \textbf{Повторить:}
+\item \textbf{Счетчик итераций: }$t:=t+1$.
+\item \textbf{Датчик случайных чисел:} выбираем $k\in \left\{ {1,...,n} \right\}$ с вероятностью $p_k $.
+\item \textbf{Модификация }$\vec {X}$\textbf{: }$X_k :=X_k +1$.
+\item \textbf{Модификация }$\vec {U}$\textbf{:} $U_i :=U_i +a_{ik} $, $i=1,...,n$.
+\item \textbf{Модификация }$\vec {p}$\textbf{:} $p_i :={p_i \exp \left( {\varepsilon {a_{ik} } \mathord{\left/ {\vphantom {{a_{ik} } 2}} \right. \kern-\nulldelimiterspace} 2} \right)} \mathord{\left/ {\vphantom {{p_i \exp \left( {\varepsilon {a_{ik} } \mathord{\left/ {\vphantom {{a_{ik} } 2}} \right. \kern-\nulldelimiterspace} 2} \right)} {\left( {\sum\limits_{j=1}^n {p_j \exp \left( {\varepsilon {a_{jk} } \mathord{\left/ {\vphantom {{a_{jk} } 2}} \right. \kern-\nulldelimiterspace} 2} \right)} } \right)}}} \right. \kern-\nulldelimiterspace} {\left( {\sum\limits_{j=1}^n {p_j \exp \left( {\varepsilon {a_{jk} } \mathord{\left/ {\vphantom {{a_{jk} } 2}} \right. \kern-\nulldelimiterspace} 2} \right)} } \right)}$, $i=1,...,n$.
+\item \textbf{Критерий останова:} если ${\vec {U}} \mathord{\left/ {\vphantom {{\vec {U}} t}} \right. \kern-\nulldelimiterspace} t\le 
+\varepsilon \vec {e}$, то останавливаемся и печатаем ${\vec {x}=\vec {X}} \mathord{\left/ {\vphantom {{\vec {x}=\vec {X}} t}} \right. \kern-\nulldelimiterspace} t$.
+\end{enumerate}
+\textbf{Указание.} Покажите, что с вероятностью не меньшей, чем $1 
+\mathord{\left/ {\vphantom {1 2}} \right. \kern-\nulldelimiterspace} 2$ 
+алгоритм остановится через $t^\ast =4\varepsilon ^{-2}\ln n$ итераций. Для 
+этого введите $P_i \left( t \right)=\exp \left( {{\varepsilon U_i \left( t 
+\right)} \mathord{\left/ {\vphantom {{\varepsilon U_i \left( t \right)} 2}} 
+\right. \kern-\nulldelimiterspace} 2} \right)$ и $\Phi \left( t 
+\right)=\sum\limits_{i=1}^n {P_i \left( t \right)} $. Покажите, что
+
+$M\left[ {\left. {\Phi \left( {t+1} \right)} \right|\vec {P}\left( t \right)} 
+\right]=\Phi \left( t \right)\sum\limits_{i,k=1}^n {p_i \left( t \right)} 
+p_k \left( t \right)\exp \left( {{\varepsilon a_{ik} } \mathord{\left/ 
+{\vphantom {{\varepsilon a_{ik} } 2}} \right. \kern-\nulldelimiterspace} 2} 
+\right)$ и $\exp \left( {{\varepsilon a_{ik} } \mathord{\left/ {\vphantom 
+{{\varepsilon a_{ik} } 2}} \right. \kern-\nulldelimiterspace} 2} \right)\le 
+1+{\varepsilon a_{ik} } \mathord{\left/ {\vphantom {{\varepsilon a_{ik} } 
+2}} \right. \kern-\nulldelimiterspace} 2+{\varepsilon ^2} \mathord{\left/ 
+{\vphantom {{\varepsilon ^2} 6}} \right. \kern-\nulldelimiterspace} 6$.
+
+Используя это и кососимметричность матрицы $A$, покажите
+\[
+M\left[ {\Phi \left( {t+1} \right)} \right]\le M\left[ {\Phi \left( t 
+\right)} \right]\left( {1+{\varepsilon ^2} \mathord{\left/ {\vphantom 
+{{\varepsilon ^2} 6}} \right. \kern-\nulldelimiterspace} 6} \right).
+\]
+Следовательно, $M\left[ {\Phi \left( t \right)} \right]\le n\exp \left( 
+{{t\varepsilon ^2} \mathord{\left/ {\vphantom {{t\varepsilon ^2} 6}} \right. 
+\kern-\nulldelimiterspace} 6} \right)$ и $M\left[ {\Phi \left( {t^\ast } 
+\right)} \right]\le n^{5 \mathord{\left/ {\vphantom {5 3}} \right. 
+\kern-\nulldelimiterspace} 3}$. Отсюда по неравенству Маркова имеем, что 
+($n\ge 8)$
+\[
+P\left( {\Phi \left( {t^\ast } \right)\le n^2} \right)\ge P\left( {\Phi 
+\left( {t^\ast } \right)\le 2n^{5 \mathord{\left/ {\vphantom {5 3}} \right. 
+\kern-\nulldelimiterspace} 3}} \right)\ge 1 \mathord{\left/ {\vphantom {1 
+2}} \right. \kern-\nulldelimiterspace} 2.
+\]
+Тогда $P\left( {{\varepsilon U_i \left( {t^\ast } \right)} \mathord{\left/ 
+{\vphantom {{\varepsilon U_i \left( {t^\ast } \right)} 2}} \right. 
+\kern-\nulldelimiterspace} 2\le 2\ln n,\;i=1,...,n} \right)\ge 1 
+\mathord{\left/ {\vphantom {1 2}} \right. \kern-\nulldelimiterspace} 2$. 
+Откуда уже следует, что $P\left( {\vec {x}\left( {t^\ast } \right)\le 
+\varepsilon \vec {e}} \right)\ge 1 \mathord{\left/ {\vphantom {1 2}} \right. 
+\kern-\nulldelimiterspace} 2$.
 \end{problem}
 
 
