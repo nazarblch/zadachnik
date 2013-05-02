@@ -113,8 +113,9 @@ $
 \item  Начиная с некоторого большого числа $N$ 99{\%} 
 натуральных чисел $n$, больших, чем $N$ обладают свойством
 $
-n^{0.99}<p_1 \cdot ...\cdot p_{11} .
+n^{0.99}<p_1 \cdot ...\cdot p_{11} ,
 $
+где $p_1,\dots, p_{11}$ наибольшие $11$ простых делителей при разложении числа на произведение простых чисел (среди $p_1,\dots,p_{11}$ может оказаться несколько одинаковых простых чисел).
 Иначе говоря, у основной части (99{\%}) натуральных чисел основная часть 
 (99{\%}) числа есть произведение наибольших простых делителей. Число 11 
 возникло из-за того, что мы выбрали 99{\%} и 99{\%}.
@@ -122,27 +123,6 @@ $
 
 \medskip 
 
-<<<<<<< HEAD
-Для доказательства неравенства Азумы необходимы следующие понятия и результаты.
-
- Пусть $\{Z_i\}^{n}_{i=1}$ и  $\{X_i\}^n_{i=1}$ последовательность случайных величин на одном вероятностном пространстве, таких что $\mathbf{E}[X_i|Z_1,\dots,Z_{i-1}] = X_{i-1}$ для всех $i$. Тогда $\{X_i\}^n_{i=1}$ называется мартингалом по отношению к $\{Z_i\}^{n}_{i=1}$. Более того последовательность $Y_i = X_i-X_{i-1}$ называется разностной мартингальной последовательностью. По определению  $\mathbf{E}[Y_i|Z_1,\dots,Z_{i-1}] = 0$ для всех $i$.
-Более общее определение: пусть $\{\mathcal{F}_i\}_{i=1}^n$ фильтрация, то есть вложенная последовательность $\sigma$-алгебр $\varnothing \subseteq \mathcal{F}_1\subseteq \dots \subseteq\mathcal{F}_n$, случайные величины $X_i$ измеримы относительно $\mathcal{F}_i$. Тогда  последовательность $X_i$ называется мартингалом относительно фильтрации $\mathcal{F}_i$, если $\mathbf{E}(X_i|\mathcal{F}_{i-1})=X_{i-1}$ для всех $i$.
-Для последовательности $\{\mathcal{F}_i\}_{i=1}^n$  случайную величину $\nu$ будем называть моментом остановки, если $\{\nu\leq n\}\in \mathcal{F}_n$ при любом $n\geq 0$.
-
-\textbf{Теорема Дуба.}  Пусть $\{X_n,\, \mathcal{F}_n;\,n=1,\dots\}$ ~--- мартингал и $\nu_1$, $\nu_2$~--- моменты остановки такие, что 
-\begin{equation*}
-\mathbf{E}|X_{\nu_i}|\leq \infty,\quad i=1,2,
-\end{equation*}
-\begin{equation*}
-\lim_{n\to\infty}\mathbf{E}(|X_n|:\nu_2\geq n) = 0.
-\end{equation*}
-Тогда на множестве $\{\nu_1\geq \nu_2\}$
-\begin{equation*}
-\mathbf{E}(X_{\nu_2}|\mathcal{F}_{\nu_1}) = X_{\nu_1}.
-\end{equation*}
-
-\medskip
-=======
 %Для доказательства неравенства Азумы необходимы следующие понятия и результаты.
 
 % Пусть $\{Z_i\}^{n}_{i=1}$ и  $\{X_i\}^n_{i=1}$ последовательность случайных величин на одном вероятностном пространстве, таких что $\mathbf{E}[X_i|Z_1,\dots,Z_{i-1}] = X_{i-1}$ для всех $i$. Тогда $\{X_i\}^n_{i=1}$ называется мартингалом по отношению к $\{Z_i\}^{n}_{i=1}$. Более того последовательность $Y_i = X_i-X_{i-1}$ называется разностной мартингальной последовательностью. По определению  $\mathbf{E}[Y_i|Z_1,\dots,Z_{i-1}] = 0$ для всех $i$.
@@ -162,7 +142,6 @@ $
 %\end{equation*}
 %
 %\medskip
->>>>>>> minor revisions of measure concentration
 
 \subsection {Примеры явления концентрации меры}
 %По мотивам книги Зорича В. А. <<Математический анализ задач естествознания>>
@@ -229,7 +208,7 @@ $$
 \end{equation*}
 \end{problem}
 \begin{remark}
-Равномерное распределение на поверхности постоянной энергии возникло из-за того, что инвариантной (и предельной по эргодической гипотезе) мерой для гамильтоновой системы будет как раз равномерная мера Лиувилля (фазовый объем сохраняется). Поскольку выполняется закон сохранения энергии, то система "живет"~  на поверхности постоянной энергии. Следовательно, носитель инвариантной меры сосредоточен именно на этой поверхности. 
+Равномерное распределение на поверхности постоянной энергии возникло из-за того, что инвариантной (и предельной по эргодической гипотезе) мерой для гамильтоновой системы будет как раз равномерная мера Лиувилля (фазовый объем сохраняется). Поскольку выполняется закон сохранения энергии, то система "живет"  на поверхности постоянной энергии. Следовательно, носитель инвариантной меры сосредоточен именно на этой поверхности. 
 
 В решении предыдущей задачи перейти к термодинамическому пределу, когда $n\to\infty$, $r = \sigma n^{1/2}$, чтобы получить распределение Максвелла. 
 \end{remark}
@@ -294,26 +273,6 @@ x_{m+1}= Ax_{m}+b,\quad m=1,2,\dots,
 \end{problem}
 \begin{remark}
 Рассмотреть множества
-<<<<<<< HEAD
-
-\begin{equation*}
-\begin{split}
-&G_0 = (I-A)^{-1}G,\\
-&G_m = A^{-m}G_0.
-\end{split}
-\end{equation*} 
-\end{remark}
-\begin{figure}[h]
-\begin{center}
-\includegraphics[width = 0.8\textwidth, height = 0.5\textheight]{sys.eps}
-\end{center}
-\caption{Иллюстрация взаимного расположения множеств ошибок в $\mathbb{R}^2$.}
-%\end{multicols}
-\end{figure}
-
-
-=======
->>>>>>> minor revisions of measure concentration
 
 \begin{equation*}
 \begin{split}
@@ -367,82 +326,34 @@ x_{m+1}= Ax_{m}+b,\quad m=1,2,\dots,
 
 %\end{problem}
 
-<<<<<<< HEAD
-%\item 
-\begin{problem}[Лемма Хефдинга] Пусть $X$--- случайная величина, такая что $\mathbf{E}X =0$, $a\leq X\leq b$. Тогда для $s>0$ верно
-\begin{equation*}
-\mathbf{E}\exp(s X)\leq \exp\bigg[\frac{s^2(b-a)^2}{8}\biggr]
-=======
 %\item
 \begin{problem}
-\textbf{ЛЕММА.}\textsl{
 Пусть $\xi_t$ ~--- гауссовские случайные величины с нулевым средним и $\mathbf{E}\xi_t^2 = \sigma^2_t\leq\sigma$. Тогда 
 \begin{equation*}
 \mathbf{E}\max_{t\in T}\xi_t \leq \sqrt{2\sigma^2\log(n)},
->>>>>>> minor revisions of measure concentration
 \end{equation*}
-здесь $n = \#T$~--- число элементов $T$.}
-
-<<<<<<< HEAD
+здесь $n = \#T$~--- число элементов $T$.
+\end{problem}
 \begin{remark}
-Использовать выпуклость экспоненты, для $a\leq x\leq b$
-
-\begin{equation*}
-\text{e}^{sx} \leq \frac{x-a}{b-a} \text{e}^{sb}+\frac{b-x}{b-a}\text{e}^{sa} 
-\end{equation*}
-
-Получить 
-
-\begin{equation*}
-\mathbf{E}\text{e}^{sx} \leq \text{e}^{\phi(u)}
-\end{equation*}
-
-где $u = s(b-a)$, $\phi(u) = -pu+\log(1-p+p\text{e}^u)$, $p = -a/(b-a)$.
-Найти $\phi^{\prime\prime}(u)$,   $\phi(0)$, $\phi^{\prime}(0)$.
-
-=======
-\textbf{Доказательство.}  Для любого $\lambda>0$
-\begin{equation*}
-\max_{t\in T} \xi_t = \lambda^{-1}\log\big[\max_{t\in T} \rm e^{\lambda \xi_t}\bigr]\leq \lambda^{-1}\log\big[\sum_{t\in T}\rm e^{\lambda \xi_t}\bigr].
-\end{equation*}
-Воспользуемся далее неравенством Йенсена: если $f(\cdot)$ вогнутая функция, 
-то
-$
-\mathbf{E}f(\xi)\leq f(\mathbf{E}\xi).
-$
-Имеем
-\begin{equation*}
-\begin{split}
-\mathbf{E}\max_{t\in T} \xi_t \leq& \lambda^{-1}\log\big[\sum_{t\in T}\mathbf{E}\exp(\lambda \xi_t)\bigr]\\ &\leq \lambda^{-1}\log\big[ n \exp(\lambda^2 \sigma^2/2)\bigr] = \frac{\log(n)}{\lambda} + \frac{\sigma^2\lambda}{2}.
-\end{split}
-\end{equation*}
-
-
-Поскольку это неравенство справедливо для любого $\lambda$, то чтобы улучшить верхнюю границу, минимизируем ее по $\lambda$. Находим 
-\begin{equation*}
- -\frac{\log(n)}{\lambda^2} + \frac{\sigma^2}{2} = 0, \quad \lambda = \sqrt{\frac{2\log(n)}{\sigma^2}}.
-\end{equation*}
-Поэтому
-\begin{equation*}
-\mathbf{E}\max_{t\in T} \xi_t  \leq \log(n) \sqrt{\frac{\sigma^2}{2\log(n)}}+ \sqrt{\sigma^2{\log(n)/2}} = \sqrt{2\log(n)\sigma^2}. 
-\end{equation*}
-$\blacktriangle$
-
-Наша задача ~--- вычислить
-\begin{equation*}
-\mathbf{E}\max_{t\in T}\xi_t.
-\end{equation*}
-Попробуем понять, насколько сложна эта задача. Именно, попробуем ответить на вопрос: насколько эта задача сложнее вычисления 
-\begin{equation*}
-\mathbf{E}\sum_{t\in T} \xi'_t = \sum_{t\in T}\mathbf{E}\xi'_t,
-\end{equation*}
-где $\xi'_t$ некоторый набор другиx с. в.
 Основная идея доказательства: если случайные величины $\xi'_t>0$ имеют тяжелые хвосты, то 
 \begin{equation*}
 \max_{t\in T} \xi'_t \asymp \sum_{t\in T}\xi'_t.
 \end{equation*}
 
-\end{problem}
+Для любого $\lambda>0$ 
+\begin{equation*}
+\max_{t\in T} \xi_t = \lambda^{-1}\log\big[\max_{t\in T} \rm e^{\lambda \xi_t}\bigr]\leq \lambda^{-1}\log\big[\sum_{t\in T}\rm e^{\lambda \xi_t}\bigr].
+\end{equation*}
+Воспользоваться далее неравенством Йенсена и получить
+\begin{equation*}
+\begin{split}
+\mathbf{E}\max_{t\in T} \xi_t \leq \frac{\log(n)}{\lambda} + \frac{\sigma^2\lambda}{2}.
+\end{split}
+\end{equation*}
+
+Минимизировать по $\lambda$.
+
+\end{remark}
  
 \begin{problem}[Лемма Хефдинга] Пусть $X$--- случайная величина, такая что $\mathbf{E}X =0$, $a\leq X\leq b$. Тогда для $s>0$ верно
 \begin{equation*}
@@ -466,7 +377,6 @@ $\blacktriangle$
 где $u = s(b-a)$, $\phi(u) = -pu+\log(1-p+p\text{e}^u)$, $p = -a/(b-a)$.
 Найти $\phi^{\prime\prime}(u)$,   $\phi(0)$, $\phi^{\prime}(0)$.
 
->>>>>>> minor revisions of measure concentration
 Показать, что 
 \begin{equation*}
 \phi^{\prime\prime}(u)\leq \frac{1}{4}.
@@ -553,16 +463,12 @@ h(u)\geq \frac{u^2}{2+2u/3}
 \end{equation*}
 \end{problem}
 
-\begin{remark} Способы доказательства неравенства Азумы-Хевдинга. 
-\medskip
+\begin{remark}
+
 \begin{enumerate}
-
-\item \textit{Первый способ доказательства использует теорему Дуба (см. введение).} 
-
-\textbf{TODO}
-
-
-\item \textit{Второй способ для доказательства не равномерного варианта теоремы использует результат задачи 12.}
+\item \textit{Использовать теорему Дуба.} 
+%\textbf{TODO}
+\item \textit{Cпособ для доказательства не равномерного варианта теоремы использует результат задачи 12.}
 
 Показать, что 
 \begin{equation*}
@@ -581,11 +487,7 @@ h(u)\geq \frac{u^2}{2+2u/3}
 
 
 \begin{problem}
-<<<<<<< HEAD
-Что можно сказать о том, как соотносятся между собой неравенство Бернштейна и Хевдинга? Рассмотреть Неравенство Бернштейна в случаях, когда $\sigma^2>\epsilon$ и когда $\sigma^2<\epsilon$. Что можно сказать про достижимость неравенства Бернштейна? 
-=======
-Что можно сказать о том, как соотносятся между собой неравенство Бернштейна и Хевдинга? Рассмотреть неравенство Бернштейна в случаях, когда $\sigma^2>\epsilon$ и когда $\sigma^2>\epsilon$. Что можно сказать про достижимость неравенства Бернштейна? 
->>>>>>> minor revisions of measure concentration
+Что можно сказать о том, как соотносятся между собой неравенство Бернштейна и Хевдинга? Рассмотреть неравенство Бернштейна в случаях, когда $\sigma^2>\epsilon$ и когда $\sigma^2<\epsilon$. Что можно сказать про достижимость неравенства Бернштейна? 
 \begin{remark}
 Рассмотреть предельную теорему Пуассона.
 \end{remark}
@@ -669,47 +571,22 @@ r(\lambda_0) = \text{e}^{-\lambda_0 c}R(\lambda_0),
 \lim_{\lambda\to\infty}m(\lambda) = M^{+},\quad \lim_{\lambda\to -\infty} = M^{-}.
 \end{equation*}
 \end{problem}
-\begin{remark}
+%\begin{remark}
 
-<<<<<<< HEAD
-\textbf{TODO}
+%\textbf{TODO}
 
-\end{remark}
-\begin{problem}
-Имеет место неравенство 
-\begin{equation*}
-\mathbf{P}_{n,c} \leq B_n(R(\lambda_0))\text{e}^{-\lambda_0c})^n,\quad\text{где} \lim_{n\to\infty}B_n=\frac{1}{2}.
-\end{equation*}
-\end{problem}
-\begin{remark}
-
-\textbf{TODO}
-
-\end{remark}
-\begin{problem}
-Для всякого $b>0$ существует такое $p(b,\lambda_0)>0$, что 
-\begin{equation*}
-\mathbf{P}_{n,c} \geq (R(\lambda_0))\text{e}^{-\lambda_0c})^n\text{e}^{-\lambda_0 b \sqrt{n}} p_n, 
-\end{equation*}
-причем $\lim_{n\to\infty}p_n = p(b,\lambda_0)$.
-\end{problem}
-\begin{remark}
-\textbf{TODO}
-=======
-\textbf{TODO}
-
-\end{remark}
+%\end{remark}
 \begin{problem}
 Имеет место неравенство 
 \begin{equation*}
 \mathbf{P}_{n,c} \leq B_n(R(\lambda_0)\text{e}^{-\lambda_0c})^n,\quad\text{где} \lim_{n\to\infty}B_n=\frac{1}{2}.
 \end{equation*}
 \end{problem}
-\begin{remark}
+%\begin{remark}
 
-\textbf{TODO}
+%\textbf{TODO}
 
-\end{remark}
+%\end{remark}
 \begin{problem}
 Для всякого $b>0$ существует такое $p(b,\lambda_0)>0$, что 
 \begin{equation*}
@@ -717,10 +594,9 @@ r(\lambda_0) = \text{e}^{-\lambda_0 c}R(\lambda_0),
 \end{equation*}
 причем $\lim_{n\to\infty}p_n = p(b,\lambda_0)$.
 \end{problem}
-\begin{remark}
-\textbf{TODO}
->>>>>>> minor revisions of measure concentration
-\end{remark}
+%\begin{remark}
+%\textbf{TODO}
+%\end{remark}
 %\begin{problem}[Задача о среднем функции в смысле Леви --- про концентрацию меры на сфере вокруг медианного значения "хорошей" функции]
 %\end{problem}
 %\subsection{Изопериметрические неравенства Талаграна(?)}
