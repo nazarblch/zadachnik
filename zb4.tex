@@ -66,6 +66,76 @@ n! \sim \sqrt{2 \pi n} \frac{n^n}{e^n}
 
 \end{problem}
 
+\begin{problem}
+
+Пусть $\xi _i $ - независимые с.в. с нулевым математическим ожиданием и с 
+плотностью распределения $p_h =\frac{1}{\sqrt {2\pi } }\left( {1+h(x)} 
+\right)e^{-\frac{x^2}{2}}$, где $h$- элемент гильбертова пространства ${\rm 
+H}\equiv L^2\left( {{\rm R},{\rm B},\mu _G } \right)$ (здесь $\mu _G $ - 
+гауссовская мера) со скалярным произведением $\left( {f,g} 
+\right)=\frac{1}{\sqrt {2\pi } }\int\limits_{-\infty }^{+\infty } 
+{f(x)g(x)e^{-\frac{x^2}{2}}dx} $, удовлетворяющий условиям:
+
+\begin{enumerate}
+\item $\left\| h \right\|$ -мала
+
+\item $\left( {h(x),1} \right)=0$
+
+\item $\left( {h(x),x} \right)=0$
+
+\end{enumerate}
+
+Покажите, что для последовательности с.в. $\zeta _n 
+=2^{-\frac{n}{2}}\sum\limits_{i=1}^{2^n} {\xi _i } $ справедлива сходимость 
+по распределению к нормальной с.в. с нулевым математическим ожиданием и 
+дисперсией $\sigma ^2(p_h )=\frac{1}{\sqrt {2\pi } }\int\limits_{-\infty 
+}^{+\infty } {x^2p_h (x)dx} $.
+
+\end{problem}
+
+$ $
+\begin{ordre}
+$ $
+\begin{enumerate}
+
+\item Заметьте, что $\zeta _{n+1} =\frac{1}{\sqrt 2 }\left( {\zeta '_n 
++\zeta ''_n } \right)$, где $\zeta '_n 
+=2^{-\frac{n}{2}}\sum\limits_{i=1}^{2^n} {\xi _i } $, $\zeta ''_n 
+=2^{-\frac{n}{2}}\sum\limits_{i=2^n+1}^{2^{2n}} {\xi _i } $ - независимые 
+одинаково распределенные случайные величины, поэтому $p_{n+1} (x)=Tp_n (x)$, 
+где $p_n (x)$ - плотность распределения $\zeta _n $, а $T$ - нелинейный 
+оператор (действующий в пространстве плотностей), такой что $Tp(x)=\sqrt 2 
+\int\limits_{-\infty }^{+\infty } {p(\sqrt 2 x-u)p(u)du} $. В этих терминах 
+в задаче нужно показать, что $T^np_h (x)\mathop \to \limits_{n\to \infty } 
+\frac{1}{\sqrt {2\pi } \sigma (p_h )}e^{-\frac{x^2}{2\sigma ^2(p_h )}}$. 
+
+\item Рассмотрите нелинейный оператор$\tilde {L}$ на пространстве ${\rm 
+H}\equiv L^2\left( {{\rm R},{\rm B},\mu _G } \right)$, связанный с 
+оператором $T$ следующим образом: $Tp_h (x)=\frac{1}{\sqrt {2\pi } }\left( 
+{1+\tilde {L}\left( {h(x)} \right)} \right)e^{-\frac{x^2}{2}}$. Линеаризуйте 
+оператор $\tilde {L}$, показав, что $\tilde {L}h=Lh+O\left( {\left\| h 
+\right\|^2} \right)$, где $L(h)(x)=\frac{2}{\sqrt \pi }\int\limits_{-\infty 
+}^{+\infty } {e^{-\left( {\frac{x^2}{2}-\sqrt 2 xu+u^2} \right)}h(u)du} $.
+
+\item Покажите, что линейный оператор $L$ имеет полное множество собственных 
+векторов $h_k (x)=e^{\frac{x^2}{2}}\left( {\frac{d}{dx}} 
+\right)^ke^{-\frac{x^2}{2}}$, $k\ge 0$, с собственными значениями $\lambda 
+_k =2^{1-\frac{k}{2}}$, $k\ge 0$. Пусть ${\rm H}_k $ - одномерное 
+подпространство, натянутое на $h_k (x)$. Тогда $L$ - сжимающий оператор на 
+${\rm H}-\left( {{\rm H}_0 \oplus {\rm H}_1 \oplus {\rm H}_2 } \right)$.
+
+\item Покажите, что $\tilde {L}$ - сжимающий оператор на ${\rm H}-\left( {{\rm 
+H}_0 \oplus {\rm H}_1 } \right)$, имеющий единственную неподвижную точку 
+$f_h (x)=\frac{1}{\sigma (p_h )}e^{\frac{x^2}{2}-\frac{x^2}{2\sigma ^2(p_h 
+)}}-1$.
+
+
+\end{enumerate}
+
+\end{ordre}
+
+
+
 
 \begin{problem}
 Книга объемом $500$ страниц содержит $50$ опечаток. Оценить вероятность того, что на случайно выбранной странице 
