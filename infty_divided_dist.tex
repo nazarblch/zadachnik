@@ -1,0 +1,134 @@
+\subsection{ Безгранично делимые распределения }
+
+\begin{problem}
+Пусть с.в. $X$ имеет экспоненциальное распределение с параметром $\lambda$ ($X\in\Exp(\lambda)$), т.е. 
+${\mathbb P}(X>x)=e^{-\lambda x},\; x\geqslant 0$. Покажите, что имеет место <<отсутствие последействия>>: 
+$$
+{\mathbb P}(X>x+y\,|\, X>x)={\mathbb P}(X>y) . 
+$$
+\end{problem}
+
+
+\begin{problem}
+Представьте, что вы владелец киоска по продаже мороженного (одного вида, скажем, пломбира) и хотите оценить, сколько мороженного $K(T)$ 
+вам удастся продать за рабочий день $T$. Имеет место формула 
+$$
+K(T)=\max\Bigl\{ n:\; \sum\limits_{k=1}^{n} X_k<T \Bigr\} , 
+$$
+где $X_1, X_2, X_3,\ldots$ --- независимые одинаково распределенные по закону $\Exp(\lambda)$ с.в. ($X_k$ интерпретируется как время между 
+$k-1$ и $k$ сделкой (продажей)). Покажите, что 
+\begin{enumerate}
+\item вероятность ${\mathbb P}(K(T+t)-K(T)=k)$, где $t\geqslant 0$ и $k=0,1,2,\ldots$, не зависит от $T\geqslant 0$; 
+
+\item $\forall n\geqslant 1$, $0\leqslant t_1\leqslant t_2\leqslant \ldots\leqslant t_n$ 
+$\quad\to\quad \bigl\{ K(t_k)-K(t_{k-1})\bigr\}_{k=1}^{n}$ --- независимые с.в.; 
+
+\item ${\mathbb P}(K(t)>1)=o(t)$, $t>0$; 
+
+\item $\forall n\geqslant 1$, $0\leqslant t_1\leqslant t_2\leqslant \ldots\leqslant t_n$, 
+$0\leqslant k_1\leqslant k_2\leqslant \ldots\leqslant k_n$, $k_1,\ldots, k_n\in {\mathbb N}\cup \{ 0\}$ 
+\begin{multline*}
+{\mathbb P}(K(t_1) = k_1,\ldots, K(t_n)=k_n)= \\
+e^{-\lambda t_1} \frac{(\lambda t_1)^{k_1}}{k_1!}\cdot 
+e^{-\lambda(t_2-t_1)} \frac{(\lambda(t_2-t_1))^{k_2-k_1}}{(k_2-k_1)!}\cdot \ldots \\
+\cdot e^{-\lambda(t_n-t_{n-1})}\frac{(\lambda(t_n-t_{n-1}))^{k_n-k_{n-1}}}{(k_n-k_{n-1})!} , 
+\end{multline*}
+в частности, $K(T)\in \Po(\lambda T)$. 
+\end{enumerate}
+\end{problem}
+
+
+
+\begin{problem}
+В течение рабочего дня фирма осуществляет $K(T)\in \Po(\lambda T)$ сделок ($K(T)$ --- с.в., имеющая распределение Пуассона с параметром 
+$\lambda T = 100 [\text{сделок/час}] * 10 [\text{часов}]$). Каждая сделка приносит доход $V_n\in R[a,b]$ ($V_n$ --- с.в., имеющая 
+равномерное распределение на отрезке $[a,b]=[\$ 10, \$ 100]$, $n$ --- номер сделки). Считая, что $K$, $V_1$, $V_2$, $\ldots$ --- 
+независимые в совокупности с.в., найдите математическое ожидание и дисперсию выручки за день $Q(T)=\sum\limits_{k=1}^{K(T)} V_k$. Докажите соотношение для характеристической функции $Q(T)$
+$$
+\varphi_{Q(T)}(t)=\exp\{ \lambda T(\varphi_{V_k}(t)-1)\} 
+$$
+   
+\end{problem}
+
+\begin{ordre}
+
+Примените формулу для условного математического ожидания  
+$$
+{\mathbb E}X= \Exp{( {\mathbb E}(X|Y) )} 
+$$
+Установите справедливость следующего соотношения.
+$$
+\Var X=\Var({\mathbb E}(X|Y))+{\mathbb E}(\Var(X|Y)) . 
+$$
+
+\end{ordre}
+
+
+\begin{problem}
+В течение трех лет фирма из предыдущей задачи работала $N=1000$ дней (длина рабочего дня и параметры спроса не менялись). 
+Оцените распределение с.в. 
+$$Q^N=\sum\limits_{k=1}^{N} Q_k(T), 
+$$
+где $Q_k(T)$ --- выручка за $k$–ый день. Верно ли, что с.в. $Q^N$ и $Q_k(NT)$ одинаково распределены? 
+\end{problem}
+
+
+
+
+\begin{problem}[пуассоновский поток событий]
+Рассмотрим интервал 
+$\left[ {-N,N} \right]$ и бросим на него независимо и случайно (точнее 
+равномерно) $M=\left[ {\rho N} \right]$ точек, где $\rho >0$ - некоторая 
+константа, называемая плотностью. Легко вычислить биномиальную вероятность 
+$P_{N,M} \left( {k,I} \right)$ того, что в конечный интервал $I\subset 
+\left[ {-N,N} \right]$ попадет ровно $k$ точек. Покажите, что $P_{N,M} 
+\left( {k,I} \right)$ стремится при $N\to \infty $ к пуассоновскому 
+выражению:
+\[
+P\left( {k,I} \right)\mathop =\limits^{def} \mathop {\lim }\limits_{N\to 
+\infty } P_{N,M\left( N \right)} \left( {k,I} \right)=\frac{\left( {\rho 
+\left| I \right|} \right)^k}{k!}e^{-\rho \left| I \right|},
+\quad
+k=0,1,...
+\]
+Покажите также, что если $I_1 ,I_2 \subset \left[ {-N,N} \right]$ и $I_1 
+\cap I_2 =\emptyset $, то
+\[
+P\left( {k_1 ,I_1 ;k_2 ,I_2 } \right)\mathop =\limits^{def} \mathop {\lim 
+}\limits_{N\to \infty } P_{N,M\left( N \right)} \left( {k_1 ,I_1 ;k_2 ,I_2 } 
+\right)=P\left( {k,I_1 } \right)P\left( {k,I_2 } \right).
+\]
+\end{problem}
+
+
+
+
+\begin{problem}[процесс Леви]
+Покажите, что если $X(t)$ --- процесс Леви, то: 
+$$
+\exists ! (b,c,\nu(dx)): \; 
+c\geqslant 0, \; \int_{-\infty}^{\infty} \max(1,x^2)\, \nu(dx)<\infty, \; \nu(dx)\geqslant 0 : 
+$$
+\[
+\forall t\geqslant 0 \;  \varphi_{X(t)}(\mu)={\mathbb E}e^{i\mu X(t)}=  
+\]
+\[
+\exp \Bigl\{ t\Bigl[ i\mu b-c\mu^2\left.\right/2+
+\int_{-\infty}^{\infty} \bigl( e^{i\mu x}-1-i\mu x I(|x|\leqslant 1) \bigr)\, \nu(dx) 
+\Bigr] \Bigr\} . 
+\]
+
+\end{problem}
+
+\begin{remark}
+При помощи данного свойства можно обосновать представление безгранично делимой случайной величины в виде смеси распределений: 
+\[
+\alpha + \beta N(m(t), \sigma^2(t)) + \gamma Q(t),
+\]
+\noindent где Q(t) - обобщенный пуассоновский процесс.
+\end{remark}
+
+
+
+
+
