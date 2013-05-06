@@ -111,6 +111,55 @@ $z^{n-1}$ в разложении $\frac{1}{n}\psi ^n(z)$.
 Покажите, что число попарно неизоморфных деревьев на $n$ вершинах не меньше, чем $ c_n n^{-2.5} e^n $, где $ c_n \to \frac{1}{\sqrt{2\pi}}$.
 \end{problem}
 
+\begin{problem}[обобщенная схема размещений]
+$ $
+
+\begin{enumerate}
+\item  Пусть для неотрицательных целочисленных с.в. $\eta _1 
+$,{\ldots},$\eta _N $ существуют независимые одинаково распределенные с.в. 
+$\xi _1 $,{\ldots},$\xi _N $ такие, что
+
+$P\left( {\eta _1 =k_1 ,...,\eta _N =k_N } \right)=P\left( {\left. {\xi _1 
+=k_1 ,...,\xi _N =k_N } \right|\xi _1 +...+\xi _N =n} \right).$ (**)
+
+Введем независимые одинаково распределенные с.в. $\xi _1^{\left( r \right)} 
+$,{\ldots},$\xi _N^{\left( r \right)} $, где $r$ целое неотрицательное число 
+и
+\[
+P\left( {\xi _1^{\left( r \right)} =k} \right)=P\left( {\left. {\xi _1 =k} 
+\right|\xi _1 \ne r} \right),
+\quad
+k=0,1,...
+\]
+Пусть $p_r =P\left( {\xi _1 =r} \right)$ и $S_N =\xi _1 +...+\xi _N $, 
+$S_N^{\left( r \right)} =\xi _1^{\left( r \right)} +...+\xi _N^{\left( r 
+\right)} $. Пусть $\mu _r \left( {n,N} \right)$ - число тех с.в. $\eta _1 
+$,{\ldots},$\eta _N $, принявших значение $r$. Покажите, что с.в. типа $\mu 
+_r \left( {n,N} \right)$ можно изучать с помощью \textit{обобщенной схемы размещений}: для любого $k=0,1,...,N$
+\[
+P\left( {\mu _r \left( {n,N} \right)=k} \right)=C_n^k p_r^k \left( {1-p_r } 
+\right)^{N-k}\frac{P\left( {S_{N-k}^{\left( r \right)} =n-kr} 
+\right)}{P\left( {S_N =n} \right)}.
+\]
+Напомним, что в классической схеме размещений $n$ различных частиц по $N$ 
+различным ячейкам было доказано, что распределение заполнений ячеек $\eta _1 
+$,{\ldots},$\eta _N $ имеет вид:
+\[
+P\left( {\eta _1 =k_1 ,...,\eta _n =k_n } \right)=\frac{n!}{k_1 !....k_N 
+!N^n},
+\]
+где $k_1 $,{\ldots},$k_n $ - неотрицательные целые числа такие, что $k_1 
++....+k_n =n$. Если положить $\xi _1 $,{\ldots},$\xi _N \in Po\left( \lambda 
+\right)$ - i.i.d. ($\lambda >0$ - произвольно), то получим (**).
+
+\item Дан случайный граф (модель Эрдеша - Реньи) $G\left( {n,\;p} \right)$. Пусть 
+$p=c\frac{\ln n}{n}$. Покажите, что при $c>1$ граф $G\left( {n,\;p} \right)$ 
+почти наверное связен.
+
+
+\end{enumerate}
+\end{problem}
+
 \begin{problem}
 Graph social: Newmen's model with fixed (predefined) Exp of node degrees.
 \end{problem}

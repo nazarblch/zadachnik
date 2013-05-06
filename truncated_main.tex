@@ -4,7 +4,8 @@
 \usepackage{amsthm,amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
-\usepackage{graphicx}
+%\usepackage{graphicx}
+\usepackage[final]{graphicx,epsfig} 
 \usepackage{longtable}
 \usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
@@ -43,13 +44,11 @@
 % To place author above title
 \def\maketitle{
   \begin{center}
-Title
+\input{title}
   \end{center}
 }
 
 \renewcommand{\refname}{Литература}
-
-\date{}
 
 %\sloppy
 %\DeclareGraphicsRule{*}{eps}{*}{}
@@ -82,6 +81,9 @@ Title
 
 \newenvironment{solution}{\begin{proof}\vspace{1em}} {\end{proof} \vspace{2em}}
 
+\usepackage{verbatim}
+
+
 
 \newcommand{\rg}{\ensuremath{\mathrm{rg}}}
 \newcommand{\grad}{\ensuremath{\mathrm{grad}}}
@@ -106,9 +108,14 @@ Title
 
 \maketitle
 
+\include{abstract}
+
+\include{introduction}
+
 \tableofcontents
 
-\include{standart_tasks}
+
+\include{truncated_standart_tasks}
 
 \include{generative_functions}
 
@@ -122,11 +129,10 @@ Title
 
 \include{combinatorics}
 
-\include{truncated/algorithms}
+\include{algorithms}
 
 \include{geometric_probability}
 
-\include{sundries} % разное
 
 \include{bibliography}
 

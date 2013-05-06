@@ -4,7 +4,8 @@
 \usepackage{amsthm,amsfonts}
 \usepackage{amssymb}
 \usepackage{mathrsfs}
-\usepackage{graphicx}
+%\usepackage{graphicx}
+\usepackage[final]{graphicx,epsfig} 
 \usepackage{longtable}
 \usepackage{indentfirst}
 \usepackage[utf8]{inputenc}
@@ -43,7 +44,7 @@
 % To place author above title
 \def\maketitle{
   \begin{center}
-Title
+\input{title}
   \end{center}
 }
 
@@ -80,8 +81,9 @@ Title
 
 \newtheorem*{ordre}{\noindent\normalsize\bf{}Указание}
 
-\newenvironment{solution}{\begin{proof}\vspace{1em}} {\end{proof} \vspace{2em}}
+\newenvironment{solution}{\ \begin{proof}\vspace{1em}} {\end{proof} \vspace{2em}}
 
+\newenvironment{comment}{}{}
 
 \newcommand{\rg}{\ensuremath{\mathrm{rg}}}
 \newcommand{\grad}{\ensuremath{\mathrm{grad}}}
@@ -106,7 +108,12 @@ Title
 
 \maketitle
 
+\include{abstract}
+
+\include{introduction}
+
 \tableofcontents
+
 
 \include{standart_tasks}
 
