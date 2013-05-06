@@ -43,7 +43,7 @@
 % To place author above title
 \def\maketitle{
   \begin{center}
-Title
+\input{title}
   \end{center}
 }
 
@@ -106,6 +106,10 @@ Title
 \selectlanguage{russian}
 
 \maketitle
+
+\include{abstract}
+
+\include{introduction}
 
 \tableofcontents
 

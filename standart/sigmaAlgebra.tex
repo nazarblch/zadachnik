@@ -13,12 +13,12 @@
 
 
 \begin{problem}
-Пусть $\Omega = [a, b]$, $F$ --- $\sigma$–алгебра, содержащая все отрезки 
-$[a,b]$ $(a \leqslant \alpha < \beta \leqslant b)$ с вероятностной мерой 
-${\mathbb P}\{ \omega\in[\alpha,\beta]\}=\dfrac{\mes[\alpha, \beta]}{\mes[a,b]}$. 
+Пусть $\Omega = [a,b]\times...\times[a,b]$, $F$ --- $\sigma$–алгебра, содержащая все отрезки 
+$[a,b]\times...\times[a,b]$ $(a \leqslant \alpha_1 < \beta_1 \leqslant b) ... (a \leqslant \alpha_n < \beta_n \leqslant b)$ с вероятностной мерой 
+${\mathbb P}\{ \omega_1  \in [\alpha_1,\beta_1], ..., \omega_n  \in [\alpha_n,\beta_n]  \}=\dfrac{\mes[\alpha_1, \beta_1]}{\mes[a,b]}  \ldots  \dfrac{\mes[\alpha_n, \beta_n]}{\mes[a,b]}$. 
 Показать, что 
 \begin{enumerate}
-\item[а)] ${\mathbb P}\{ \omega=c=\const\}=0$; 
+\item[а)] ${\mathbb P}\{ \omega_1=c=\const\}=0$; 
 \item[б)] ${\mathbb P}\{ \omega_1=\omega_2\}=0$. 
 \end{enumerate}
 Найти вероятность, что для трех исходов $\omega_1$, $\omega_2$, $\omega_3$ третий лежит между первыми двумя. 
@@ -69,7 +69,8 @@ $$
 
 \end{ordre}
 
-\begin{problem} (пример о сходимости ряда)
+\begin{comment}
+\begin{problem}[пример о сходимости ряда]
 Пусть $(\Omega,\Xi,{\mathbb P})$ --- вероятностное пространство, $\xi_1,\xi_2,\ldots$ --- некоторая последовательность с.в.. 
 Обозначим $\Xi_n^{\infty}=\sigma(\xi_{n},\xi_{n+1},\ldots)$ --- $\sigma$-алгебру, порожденную с.в. $\xi_{n},\xi_{n+1},\ldots$ и пусть 
 $$
@@ -91,3 +92,4 @@ $\xi_1,\xi_2,\ldots$ >>.
 ${\mathbb P}(A\cap A)={\mathbb P}(A)\cdot {\mathbb P}(A)$, т.е. ${\mathbb P}(A)={\mathbb P}^2(A)$, откуда 
 ${\mathbb P}(A)=0$ или $1$. 
 \end{ordre}
+\end{comment}

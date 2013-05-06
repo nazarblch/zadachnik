@@ -43,13 +43,11 @@
 % To place author above title
 \def\maketitle{
   \begin{center}
-Title
+\input{title}
   \end{center}
 }
 
 \renewcommand{\refname}{Литература}
-
-\date{}
 
 %\sloppy
 %\DeclareGraphicsRule{*}{eps}{*}{}
@@ -109,11 +107,14 @@ Title
 
 \maketitle
 
+\include{abstract}
+
+\include{introduction}
+
 \tableofcontents
 
 
-
-\include{standart_tasks}
+\include{truncated_standart_tasks}
 
 \include{generative_functions}
 
@@ -127,7 +128,7 @@ Title
 
 \include{combinatorics}
 
-\include{truncated/algorithms}
+\include{algorithms}
 
 \include{geometric_probability}
 
